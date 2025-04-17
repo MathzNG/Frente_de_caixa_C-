@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+using MySql.Data.MySqlClient; 
 
 namespace Cadastro_de_produto
 {
@@ -22,13 +22,13 @@ namespace Cadastro_de_produto
         public int CadastroProdutos()
         {
             MySqlCommand comm = new MySqlCommand();
-            comm.CommandText = "insert into tbProdutos(nome,preco,descricao)values(@nome,@preco,@descricao);";
+            comm.CommandText = "insert into tbProdutos(nome,preco,descricao) values(@nome,@preco,@descricao);";
             comm.CommandType = CommandType.Text;
 
             comm.Parameters.Clear();
             comm.Parameters.Add("@nome", MySqlDbType.VarChar,100).Value = txtNome.Text;
             comm.Parameters.Add("@preco", MySqlDbType.Decimal,18).Value = txtPreco.Text;
-            comm.Parameters.Add("@descricao", MySqlDbType.VarChar, 200).Value = txtDescricao.Text;
+            comm.Parameters.Add("@descricao", MySqlDbType.VarChar, 100).Value = txtDescricao.Text;
 
             comm.Connection = Conexao.obterConexao();
 
@@ -57,10 +57,9 @@ namespace Cadastro_de_produto
 
             Produto prod = new Produto();
 
-            CadastroProdutos();
-
             try
             {
+                CadastroProdutos();
                 prod.Id = long.Parse(txtId.Text);
                 prod.Nome = txtNome.Text;
                 prod.Preco = decimal.Parse(txtPreco.Text);

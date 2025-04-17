@@ -9,7 +9,7 @@ namespace Cadastro_de_produto
 {
     internal class Conexao
     {
-        private static string stringConn = "Server=localhost;port=3306;Database=dblojabolo;Uid=root;Pwd=''";
+        private static string stringConn = "Server=localhost;port=3306;Database=dbLojaBolos;Uid=root;Pwd=''";
         private static MySqlConnection conn = null;
 
         public static MySqlConnection obterConexao()
