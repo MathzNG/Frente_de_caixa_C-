@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Cadastro_de_produto
 {
@@ -15,8 +16,43 @@ namespace Cadastro_de_produto
         public frmCaixa()
         {
             InitializeComponent();
+            produtosLista();
+        }
+        public void produtosLista()
+        {
+            
+            MySqlCommand comm = new MySqlCommand();
+            comm.Connection = Conexao.obterConexao();
+            comm.CommandText = "select nome from tbProdutos;";
+            comm.CommandType = CommandType.Text;
+
+            MySqlDataReader dr = comm.ExecuteReader();
+            while (dr.Read())
+            {
+                ltbProdutos.Items.Add(dr["nome"].ToString());
+            }
+            Conexao.fecharConexao();
         }
 
+        public void valorProduto(string nome)
+        {
+            MySqlCommand comm = new MySqlCommand();
+            comm.CommandText = "select preco from tbProdutos where nome = @nome;";
+            comm.CommandType = CommandType.Text;
+
+            comm.Parameters.Clear();
+            comm.Parameters.Add("@nome", MySqlDbType.VarChar, 100).Value = nome;
+            comm.Connection = Conexao.obterConexao();
+
+            MySqlDataReader Dr;
+            Dr = comm.ExecuteReader();
+            Dr.Read();
+
+            lblInvisiblepreco.Text = Dr["preco"].ToString();
+
+            Conexao.fecharConexao();
+
+        }
         public void FundoTransparente()
         {
             lblPreco.BackColor = Color.Transparent;
@@ -30,7 +66,7 @@ namespace Cadastro_de_produto
 
             lblInvisiblepreco.BackColor = Color.Transparent;
             lblInvisiblepreco.Parent = pctFundo;
-            
+
             lblInvisibleTotal.BackColor = Color.Transparent;
             lblInvisibleTotal.Parent = pctFundo;
 
@@ -49,6 +85,15 @@ namespace Cadastro_de_produto
             frmMenu abrir = new frmMenu();
             abrir.Show();
             this.Hide();
+        }
+
+        private void ltbProdutos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ltbProdutos.SelectedItem != null)
+            {
+                string itemSelecionado = ltbProdutos.SelectedItem.ToString();
+                valorProduto(itemSelecionado);
+            }
         }
     }
 }

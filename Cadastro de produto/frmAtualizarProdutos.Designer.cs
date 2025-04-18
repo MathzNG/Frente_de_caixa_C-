@@ -46,65 +46,73 @@
             // txtId
             // 
             this.txtId.Enabled = false;
-            this.txtId.Location = new System.Drawing.Point(28, 70);
+            this.txtId.Location = new System.Drawing.Point(37, 86);
+            this.txtId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(150, 20);
+            this.txtId.Size = new System.Drawing.Size(199, 22);
             this.txtId.TabIndex = 0;
             // 
             // txtPreco
             // 
-            this.txtPreco.Location = new System.Drawing.Point(28, 193);
+            this.txtPreco.Location = new System.Drawing.Point(37, 238);
+            this.txtPreco.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPreco.Name = "txtPreco";
-            this.txtPreco.Size = new System.Drawing.Size(150, 20);
-            this.txtPreco.TabIndex = 2;
+            this.txtPreco.Size = new System.Drawing.Size(199, 22);
+            this.txtPreco.TabIndex = 1;
             // 
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(25, 54);
+            this.lblId.Location = new System.Drawing.Point(33, 66);
+            this.lblId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(18, 13);
+            this.lblId.Size = new System.Drawing.Size(20, 16);
             this.lblId.TabIndex = 3;
             this.lblId.Text = "ID";
             // 
             // lblPreco
             // 
             this.lblPreco.AutoSize = true;
-            this.lblPreco.Location = new System.Drawing.Point(25, 177);
+            this.lblPreco.Location = new System.Drawing.Point(33, 218);
+            this.lblPreco.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPreco.Name = "lblPreco";
-            this.lblPreco.Size = new System.Drawing.Size(35, 13);
+            this.lblPreco.Size = new System.Drawing.Size(43, 16);
             this.lblPreco.TabIndex = 4;
             this.lblPreco.Text = "Preço";
             // 
             // btnAtualizar
             // 
-            this.btnAtualizar.Location = new System.Drawing.Point(296, 273);
+            this.btnAtualizar.Location = new System.Drawing.Point(395, 336);
+            this.btnAtualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAtualizar.Name = "btnAtualizar";
-            this.btnAtualizar.Size = new System.Drawing.Size(118, 33);
-            this.btnAtualizar.TabIndex = 6;
+            this.btnAtualizar.Size = new System.Drawing.Size(157, 41);
+            this.btnAtualizar.TabIndex = 2;
             this.btnAtualizar.Text = "Atualizar";
             this.btnAtualizar.UseVisualStyleBackColor = true;
             this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(28, 131);
+            this.txtNome.Location = new System.Drawing.Point(37, 161);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(150, 20);
-            this.txtNome.TabIndex = 7;
+            this.txtNome.Size = new System.Drawing.Size(199, 22);
+            this.txtNome.TabIndex = 0;
             // 
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(25, 115);
+            this.lblNome.Location = new System.Drawing.Point(33, 142);
+            this.lblNome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(35, 13);
+            this.lblNome.Size = new System.Drawing.Size(44, 16);
             this.lblNome.TabIndex = 8;
             this.lblNome.Text = "Nome";
             // 
             // mspMenuprincipal
             // 
             this.mspMenuprincipal.BackColor = System.Drawing.Color.LightPink;
+            this.mspMenuprincipal.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mspMenuprincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mspMenu,
             this.mspCadastro,
@@ -112,39 +120,39 @@
             this.mspVoltar});
             this.mspMenuprincipal.Location = new System.Drawing.Point(0, 0);
             this.mspMenuprincipal.Name = "mspMenuprincipal";
-            this.mspMenuprincipal.Size = new System.Drawing.Size(446, 24);
+            this.mspMenuprincipal.Size = new System.Drawing.Size(595, 28);
             this.mspMenuprincipal.TabIndex = 9;
             this.mspMenuprincipal.Text = "menuStrip1";
             // 
             // mspMenu
             // 
             this.mspMenu.Name = "mspMenu";
-            this.mspMenu.Size = new System.Drawing.Size(50, 20);
+            this.mspMenu.Size = new System.Drawing.Size(60, 24);
             this.mspMenu.Text = "Menu";
             // 
             // mspCadastro
             // 
             this.mspCadastro.Name = "mspCadastro";
-            this.mspCadastro.Size = new System.Drawing.Size(66, 20);
+            this.mspCadastro.Size = new System.Drawing.Size(82, 24);
             this.mspCadastro.Text = "Cadastro";
             // 
             // mspProdutos
             // 
             this.mspProdutos.Name = "mspProdutos";
-            this.mspProdutos.Size = new System.Drawing.Size(67, 20);
+            this.mspProdutos.Size = new System.Drawing.Size(82, 24);
             this.mspProdutos.Text = "Produtos";
             // 
             // mspVoltar
             // 
             this.mspVoltar.Name = "mspVoltar";
-            this.mspVoltar.Size = new System.Drawing.Size(49, 20);
+            this.mspVoltar.Size = new System.Drawing.Size(62, 24);
             this.mspVoltar.Text = "Voltar";
             // 
             // frmAtualizarProdutos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(446, 328);
+            this.ClientSize = new System.Drawing.Size(595, 404);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.btnAtualizar);
@@ -155,6 +163,7 @@
             this.Controls.Add(this.mspMenuprincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MainMenuStrip = this.mspMenuprincipal;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmAtualizarProdutos";
             this.Text = "Atualizar Produtos";
             this.mspMenuprincipal.ResumeLayout(false);
