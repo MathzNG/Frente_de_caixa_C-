@@ -17,3 +17,9 @@ desc tbProdutos;
 insert into tbProdutos(nome,preco,descricao) values();
 
 select * from tbProdutos;
+
+select nome from tbProdutos;
+
+select * from tbProdutos where preco = preco;
+
+update tbProdutos set nome = nome,preco = preco,descricao = descricao where codProd = codProd;
