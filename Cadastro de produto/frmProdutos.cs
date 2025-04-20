@@ -17,6 +17,7 @@ namespace Cadastro_de_produto
             InitializeComponent();
         }
 
+
         private void frmProdutos_Load(object sender, EventArgs e)
         {
             dgvProdutos.DataSource = Produto.ListaProdutos;
