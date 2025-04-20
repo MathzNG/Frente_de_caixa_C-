@@ -14,12 +14,14 @@ primary key (codProd)
 
 desc tbProdutos;
 
-insert into tbProdutos(nome,preco,descricao) values();
+--insert into tbProdutos(nome,preco,descricao) values();
 
 select * from tbProdutos;
 
-select nome from tbProdutos;
+--select nome from tbProdutos;
 
-select * from tbProdutos where preco = preco;
+--select * from tbProdutos where preco = preco;
 
-update tbProdutos set nome = nome,preco = preco,descricao = descricao where codProd = codProd;
+--update tbProdutos set nome = nome,preco = preco,descricao = descricao where codProd = codProd;
+
+delete from tbProdutos where codProd = codProd;
