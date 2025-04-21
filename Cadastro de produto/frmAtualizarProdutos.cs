@@ -141,26 +141,5 @@ namespace Cadastro_de_produto
                 MessageBox.Show("Produto não excluido!");
             }
         }
-
-        private void mspMenu_Click(object sender, EventArgs e)
-        {
-            frmMenu abrir = new frmMenu();
-            abrir.Show();
-            this.Hide();
-        }
-
-        private void mspCadastro_Click(object sender, EventArgs e)
-        {
-            frmCadastro abrir = new frmCadastro();
-            abrir.Show();
-            this.Hide();
-        }
-
-        private void mspProdutos_Click(object sender, EventArgs e)
-        {
-            frmProdutos abrir = new frmProdutos();
-            abrir.Show();
-            this.Hide();
-        }
     }
 }

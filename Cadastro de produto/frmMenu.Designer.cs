@@ -29,33 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
-            this.panelMenu = new System.Windows.Forms.Panel();
             this.lblMenu = new System.Windows.Forms.Label();
             this.btnSair = new System.Windows.Forms.Button();
             this.pctMenu = new System.Windows.Forms.PictureBox();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.btnCadastro = new System.Windows.Forms.Button();
             this.btnCaixa = new System.Windows.Forms.Button();
+            this.panelMenu = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctMenu)).BeginInit();
+            this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panelMenu
-            // 
-            this.panelMenu.BackColor = System.Drawing.Color.LightPink;
-            this.panelMenu.Controls.Add(this.lblMenu);
-            this.panelMenu.Controls.Add(this.btnSair);
-            this.panelMenu.Controls.Add(this.pctMenu);
-            this.panelMenu.Controls.Add(this.btnAtualizar);
-            this.panelMenu.Controls.Add(this.btnCadastro);
-            this.panelMenu.Controls.Add(this.btnCaixa);
-            this.panelMenu.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panelMenu.Location = new System.Drawing.Point(0, -2);
-            this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(190, 491);
-            this.panelMenu.TabIndex = 0;
             // 
             // lblMenu
             // 
@@ -88,7 +73,7 @@
             this.pctMenu.Location = new System.Drawing.Point(12, 24);
             this.pctMenu.Name = "pctMenu";
             this.pctMenu.Size = new System.Drawing.Size(62, 61);
-            this.pctMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctMenu.TabIndex = 4;
             this.pctMenu.TabStop = false;
             // 
@@ -133,6 +118,21 @@
             this.btnCaixa.UseVisualStyleBackColor = true;
             this.btnCaixa.Click += new System.EventHandler(this.btnCaixa_Click);
             // 
+            // panelMenu
+            // 
+            this.panelMenu.BackColor = System.Drawing.Color.LightPink;
+            this.panelMenu.Controls.Add(this.lblMenu);
+            this.panelMenu.Controls.Add(this.btnSair);
+            this.panelMenu.Controls.Add(this.pctMenu);
+            this.panelMenu.Controls.Add(this.btnAtualizar);
+            this.panelMenu.Controls.Add(this.btnCadastro);
+            this.panelMenu.Controls.Add(this.btnCaixa);
+            this.panelMenu.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panelMenu.Location = new System.Drawing.Point(0, -2);
+            this.panelMenu.Name = "panelMenu";
+            this.panelMenu.Size = new System.Drawing.Size(190, 491);
+            this.panelMenu.TabIndex = 0;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -154,23 +154,22 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMenu";
             this.Text = "Menu";
+            ((System.ComponentModel.ISupportInitialize)(this.pctMenu)).EndInit();
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.PictureBox pctMenu;
         private System.Windows.Forms.Button btnAtualizar;
         private System.Windows.Forms.Button btnCadastro;
         private System.Windows.Forms.Button btnCaixa;
         private System.Windows.Forms.Label lblMenu;
+        private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
