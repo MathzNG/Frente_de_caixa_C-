@@ -16,5 +16,11 @@ namespace Cadastro_de_produto
         {
             InitializeComponent();
         }
+        public frmVendas(string valor)
+        {
+            InitializeComponent();
+            ltbValor.Items.Add(valor);
+        }
+
     }
 }

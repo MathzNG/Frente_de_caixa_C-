@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient; 
+using MySql.Data.MySqlClient;
 
 namespace Cadastro_de_produto
 {
@@ -18,7 +18,13 @@ namespace Cadastro_de_produto
         public frmCadastro()
         {
             InitializeComponent();
-            ProdutosLista();
+
+        }
+        public frmCadastro(string produto)
+        {
+            InitializeComponent();
+            txtNome.Text = produto;
+           valorProduto(txtNome.Text);
         }
 
         public int CadastroProdutos()
@@ -28,8 +34,8 @@ namespace Cadastro_de_produto
             comm.CommandType = CommandType.Text;
 
             comm.Parameters.Clear();
-            comm.Parameters.Add("@nome", MySqlDbType.VarChar,100).Value = txtNome.Text;
-            comm.Parameters.Add("@preco", MySqlDbType.Decimal,18).Value = txtPreco.Text;
+            comm.Parameters.Add("@nome", MySqlDbType.VarChar, 100).Value = txtNome.Text;
+            comm.Parameters.Add("@preco", MySqlDbType.Decimal, 18).Value = txtPreco.Text;
             comm.Parameters.Add("@descricao", MySqlDbType.VarChar, 100).Value = txtDescricao.Text;
 
             comm.Connection = Conexao.obterConexao();
@@ -42,11 +48,35 @@ namespace Cadastro_de_produto
 
         }
 
+        public void valorProduto(string nome)
+        {
+            MySqlCommand comm = new MySqlCommand();
+            comm.CommandText = "select preco,codProd,descricao from tbProdutos where nome = @nome;";
+            comm.CommandType = CommandType.Text;
+
+            comm.Parameters.Clear();
+            comm.Parameters.Add("@nome", MySqlDbType.VarChar, 100).Value = nome;
+            comm.Connection = Conexao.obterConexao();
+
+            MySqlDataReader Dr;
+            Dr = comm.ExecuteReader();
+            Dr.Read();
+
+            txtPreco.Text = Dr["preco"].ToString();
+            txtId.Text = Dr["codProd"].ToString();
+            txtDescricao.Text = Dr["descricao"].ToString();
+
+            Conexao.fecharConexao();
+
+        }
+      
+
         private void LimparCampos()
         {
             txtNome.Clear();
             txtPreco.Clear();
             txtId.Clear();
+            txtDescricao.Clear();
 
             int totalLista = Produto.ListaProdutos.Count;
             int novoCodigo = totalLista + 1;
@@ -101,22 +131,23 @@ namespace Cadastro_de_produto
             txtId.Text = novoCodigo.ToString("D4");
         }
 
-        public void ProdutosLista()
-        {
+        /* public void ProdutosLista()
+         {
 
-            MySqlCommand comm = new MySqlCommand();
-            comm.Connection = Conexao.obterConexao();
-            comm.CommandText = "select nome from tbProdutos;";
-            comm.CommandType = CommandType.Text;
+             MySqlCommand comm = new MySqlCommand();
+             comm.Connection = Conexao.obterConexao();
+             comm.CommandText = "select nome from tbProdutos;";
+             comm.CommandType = CommandType.Text;
 
-            MySqlDataReader dr = comm.ExecuteReader();
-            while (dr.Read())
-            {
-                cbbNome.Items.Add(dr["nome"].ToString());
+             MySqlDataReader dr = comm.ExecuteReader();
+             while (dr.Read())
+             {
+                 cbbNome.Items.Add(dr["nome"].ToString());
 
-            }
-            Conexao.fecharConexao();
-        }
+             }
+             Conexao.fecharConexao();
+         }
+        */
 
         public void ValorProduto(string nome)
         {
@@ -228,7 +259,8 @@ namespace Cadastro_de_produto
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             frmAtualizarProdutos abrir = new frmAtualizarProdutos();
-            abrir.ShowDialog();
+            abrir.Show();
+            this.Hide();
         }
     }
 }

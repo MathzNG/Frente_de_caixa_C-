@@ -115,8 +115,11 @@ namespace Cadastro_de_produto
         {
             if (cbbNome.SelectedItem != null)
             {
-                string nome = cbbNome.SelectedItem.ToString();
-                valorProduto(nome);
+                string produto = cbbNome.SelectedItem.ToString();
+                frmCadastro abrir = new frmCadastro(produto);
+                abrir.Show();
+                this.Hide();
+
             }
         }
 

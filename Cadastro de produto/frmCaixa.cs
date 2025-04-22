@@ -20,7 +20,7 @@ namespace Cadastro_de_produto
         }
         public void produtosLista()
         {
-            
+
             MySqlCommand comm = new MySqlCommand();
             comm.Connection = Conexao.obterConexao();
             comm.CommandText = "select nome from tbProdutos;";
@@ -93,6 +93,37 @@ namespace Cadastro_de_produto
             {
                 string itemSelecionado = ltbProdutos.SelectedItem.ToString();
                 valorProduto(itemSelecionado);
+            }
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            int valorMultiplicador = Convert.ToInt32(numericUpDown1.Value);
+            double valorProduto = Convert.ToDouble(lblInvisiblepreco.Text);
+            double resultado = valorProduto * valorMultiplicador;
+
+            lblInvisibleTotal.Text = resultado.ToString("C");
+        }
+
+        private void btnConfirma_Click(object sender, EventArgs e)
+        {
+            string valor = lblInvisibleTotal.Text;
+
+            DialogResult resultado = MessageBox.Show("Deseja confirmar a venda?",
+            "Confirmação", 
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question,
+            MessageBoxDefaultButton.Button2);
+
+            if (resultado == DialogResult.Yes)
+            {
+                MessageBox.Show("Venda confirmada com sucesso!");
+                frmVendas abrir = new frmVendas(valor);
+                abrir.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Venda cancelada!");
             }
         }
     }
