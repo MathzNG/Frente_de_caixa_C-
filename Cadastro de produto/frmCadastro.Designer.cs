@@ -61,7 +61,7 @@
             // txtPreco
             // 
             this.txtPreco.Location = new System.Drawing.Point(26, 172);
-            this.txtPreco.MaxLength = 1000;
+            this.txtPreco.MaxLength = 50;
             this.txtPreco.Name = "txtPreco";
             this.txtPreco.Size = new System.Drawing.Size(158, 20);
             this.txtPreco.TabIndex = 1;
@@ -98,6 +98,7 @@
             // 
             this.txtId.Enabled = false;
             this.txtId.Location = new System.Drawing.Point(26, 47);
+            this.txtId.MaxLength = 6;
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(162, 20);
             this.txtId.TabIndex = 11;

@@ -22,5 +22,13 @@ namespace Cadastro_de_produto
             ltbValor.Items.Add(valor);
         }
 
+        private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProdutos abrir = new frmProdutos();
+            abrir.Show();
+            this.Hide();
+        }
+
+      
     }
 }

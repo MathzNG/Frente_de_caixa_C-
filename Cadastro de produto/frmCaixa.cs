@@ -18,6 +18,13 @@ namespace Cadastro_de_produto
             InitializeComponent();
             produtosLista();
         }
+        public void LimparCampos()
+        {
+           
+            
+            lblInvisiblepreco.Text = "";
+            lblInvisibleTotal.Text = "";
+        }
         public void produtosLista()
         {
 
@@ -73,11 +80,15 @@ namespace Cadastro_de_produto
             btnVoltar.BackColor = Color.Transparent;
             btnVoltar.Parent = pctFundo;
 
+            btnConfirma.BackColor = Color.Transparent;
+            btnConfirma.Parent = pctFundo;
+
         }
 
         private void frmCaixa_Load(object sender, EventArgs e)
         {
             FundoTransparente();
+            ltbProdutos.ForeColor = Color.Red;
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -93,6 +104,7 @@ namespace Cadastro_de_produto
             {
                 string itemSelecionado = ltbProdutos.SelectedItem.ToString();
                 valorProduto(itemSelecionado);
+               
             }
         }
 
@@ -118,12 +130,19 @@ namespace Cadastro_de_produto
             if (resultado == DialogResult.Yes)
             {
                 MessageBox.Show("Venda confirmada com sucesso!");
-                frmVendas abrir = new frmVendas(valor);
-                abrir.ShowDialog();
+                LimparCampos();
             }
             else
             {
                 MessageBox.Show("Venda cancelada!");
+            }
+        }
+
+        private void btnConfirma_KeyDown(object sender, KeyEventArgs e)
+        {
+        if(e.KeyCode == Keys.Enter)
+            {
+             
             }
         }
     }

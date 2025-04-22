@@ -32,7 +32,7 @@
             this.lblMenu = new System.Windows.Forms.Label();
             this.btnSair = new System.Windows.Forms.Button();
             this.pctMenu = new System.Windows.Forms.PictureBox();
-            this.btnAtualizar = new System.Windows.Forms.Button();
+            this.btnProdutos = new System.Windows.Forms.Button();
             this.btnCadastro = new System.Windows.Forms.Button();
             this.btnCaixa = new System.Windows.Forms.Button();
             this.panelMenu = new System.Windows.Forms.Panel();
@@ -77,18 +77,18 @@
             this.pctMenu.TabIndex = 4;
             this.pctMenu.TabStop = false;
             // 
-            // btnAtualizar
+            // btnProdutos
             // 
-            this.btnAtualizar.FlatAppearance.BorderSize = 0;
-            this.btnAtualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAtualizar.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtualizar.Location = new System.Drawing.Point(0, 289);
-            this.btnAtualizar.Name = "btnAtualizar";
-            this.btnAtualizar.Size = new System.Drawing.Size(187, 48);
-            this.btnAtualizar.TabIndex = 3;
-            this.btnAtualizar.Text = "Atualizar";
-            this.btnAtualizar.UseVisualStyleBackColor = true;
-            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
+            this.btnProdutos.FlatAppearance.BorderSize = 0;
+            this.btnProdutos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProdutos.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProdutos.Location = new System.Drawing.Point(0, 289);
+            this.btnProdutos.Name = "btnProdutos";
+            this.btnProdutos.Size = new System.Drawing.Size(187, 48);
+            this.btnProdutos.TabIndex = 3;
+            this.btnProdutos.Text = "Produtos";
+            this.btnProdutos.UseVisualStyleBackColor = true;
+            this.btnProdutos.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // btnCadastro
             // 
@@ -124,7 +124,7 @@
             this.panelMenu.Controls.Add(this.lblMenu);
             this.panelMenu.Controls.Add(this.btnSair);
             this.panelMenu.Controls.Add(this.pctMenu);
-            this.panelMenu.Controls.Add(this.btnAtualizar);
+            this.panelMenu.Controls.Add(this.btnProdutos);
             this.panelMenu.Controls.Add(this.btnCadastro);
             this.panelMenu.Controls.Add(this.btnCaixa);
             this.panelMenu.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -165,7 +165,7 @@
         #endregion
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.PictureBox pctMenu;
-        private System.Windows.Forms.Button btnAtualizar;
+        private System.Windows.Forms.Button btnProdutos;
         private System.Windows.Forms.Button btnCadastro;
         private System.Windows.Forms.Button btnCaixa;
         private System.Windows.Forms.Label lblMenu;

@@ -39,7 +39,7 @@
             this.dgvProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProdutos.Location = new System.Drawing.Point(0, 0);
             this.dgvProdutos.Name = "dgvProdutos";
-            this.dgvProdutos.Size = new System.Drawing.Size(519, 320);
+            this.dgvProdutos.Size = new System.Drawing.Size(700, 402);
             this.dgvProdutos.TabIndex = 0;
             this.dgvProdutos.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProdutos_CellMouseEnter);
             // 
@@ -47,7 +47,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(519, 320);
+            this.ClientSize = new System.Drawing.Size(700, 402);
             this.Controls.Add(this.dgvProdutos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmProdutos";

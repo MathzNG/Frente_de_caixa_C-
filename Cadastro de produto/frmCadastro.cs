@@ -195,11 +195,12 @@ namespace Cadastro_de_produto
             //Método para atualizar dados
 
             MySqlCommand comm = new MySqlCommand();
-            comm.CommandText = "update tbProdutos set preco = @preco,descricao = @descricao where codProd = @codProd;";
+            comm.CommandText = "update tbProdutos set nome = @nome,preco = @preco,descricao = @descricao where codProd = @codProd;";
             comm.CommandType = CommandType.Text;
 
             comm.Parameters.Clear();
             comm.Parameters.Add("@codProd", MySqlDbType.Int32).Value = codProd;
+            comm.Parameters.Add("@nome", MySqlDbType.VarChar, 100).Value = txtNome.Text;
             comm.Parameters.Add("@preco", MySqlDbType.Decimal, 18).Value = txtPreco.Text;
             comm.Parameters.Add("@descricao", MySqlDbType.VarChar, 100).Value = txtDescricao.Text;
 
@@ -219,8 +220,9 @@ namespace Cadastro_de_produto
             if (alterarDados(Convert.ToInt32(txtId.Text)) == 1)
             {
                 MessageBox.Show("Produto atualizado com sucesso!");
-                txtNome.Text = "";
+                txtNome.Clear();
                 txtPreco.Clear();
+                txtDescricao.Clear();
             }
             else
             {

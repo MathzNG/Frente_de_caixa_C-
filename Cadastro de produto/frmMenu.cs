@@ -33,7 +33,7 @@ namespace Cadastro_de_produto
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
-            frmAtualizarProdutos abrir = new frmAtualizarProdutos();
+            frmProdutos abrir = new frmProdutos();
             abrir.Show();
             this.Hide();
         }
