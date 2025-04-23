@@ -18,6 +18,7 @@ namespace Cadastro_de_produto
         public frmCadastro()
         {
             InitializeComponent();
+            
 
         }
         public frmCadastro(string produto)
@@ -35,7 +36,7 @@ namespace Cadastro_de_produto
 
             comm.Parameters.Clear();
             comm.Parameters.Add("@nome", MySqlDbType.VarChar, 100).Value = txtNome.Text;
-            comm.Parameters.Add("@preco", MySqlDbType.Decimal, 18).Value = txtPreco.Text;
+            comm.Parameters.Add("@preco", MySqlDbType.Decimal, 18).Value = nudPreco.Text;
             comm.Parameters.Add("@descricao", MySqlDbType.VarChar, 100).Value = txtDescricao.Text;
 
             comm.Connection = Conexao.obterConexao();
@@ -62,7 +63,7 @@ namespace Cadastro_de_produto
             Dr = comm.ExecuteReader();
             Dr.Read();
 
-            txtPreco.Text = Dr["preco"].ToString();
+            nudPreco.Text = Dr["preco"].ToString();
             txtId.Text = Dr["codProd"].ToString();
             txtDescricao.Text = Dr["descricao"].ToString();
 
@@ -74,40 +75,28 @@ namespace Cadastro_de_produto
         private void LimparCampos()
         {
             txtNome.Clear();
-            txtPreco.Clear();
+            nudPreco.Value = 0;
             txtId.Clear();
             txtDescricao.Clear();
-
-            int totalLista = Produto.ListaProdutos.Count;
-            int novoCodigo = totalLista + 1;
-            txtId.Text = novoCodigo.ToString("D4");
 
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-
-            Produto prod = new Produto();
-
-            try
+            if (txtNome.Text == "" || nudPreco.Value == 0 )
             {
-                CadastroProdutos();
-                prod.Id = long.Parse(txtId.Text);
-                prod.Nome = txtNome.Text;
-                prod.Preco = decimal.Parse(txtPreco.Text);
-                prod.Descricao = txtDescricao.Text;
-
+                MessageBox.Show("Preencha todos os campos!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                LimparCampos();
+                return;
+            }
+            if (CadastroProdutos() == 1)
+            {
                 MessageBox.Show("Produto cadastrado com sucesso!");
-                Produto.ListaProdutos.Add(prod);
-                frmProdutos abrir = new frmProdutos();
-                abrir.ShowDialog();
                 LimparCampos();
+
             }
-            catch (Exception)
-            {
-                MessageBox.Show("Insira valores validos!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                LimparCampos();
-            }
+
+            
         }
 
         private void mspMenuprincipal_Click(object sender, EventArgs e)
@@ -126,29 +115,10 @@ namespace Cadastro_de_produto
 
         private void frmCadastro_Load(object sender, EventArgs e)
         {
-            int totalLista = Produto.ListaProdutos.Count;
-            int novoCodigo = totalLista + 1;
-            txtId.Text = novoCodigo.ToString("D4");
+            
         }
 
-        /* public void ProdutosLista()
-         {
-
-             MySqlCommand comm = new MySqlCommand();
-             comm.Connection = Conexao.obterConexao();
-             comm.CommandText = "select nome from tbProdutos;";
-             comm.CommandType = CommandType.Text;
-
-             MySqlDataReader dr = comm.ExecuteReader();
-             while (dr.Read())
-             {
-                 cbbNome.Items.Add(dr["nome"].ToString());
-
-             }
-             Conexao.fecharConexao();
-         }
-        */
-
+        
         public void ValorProduto(string nome)
         {
             MySqlCommand comm = new MySqlCommand();
@@ -163,7 +133,7 @@ namespace Cadastro_de_produto
             Dr = comm.ExecuteReader();
             Dr.Read();
 
-            txtPreco.Text = Dr["preco"].ToString();
+            nudPreco.Text = Dr["preco"].ToString();
             txtId.Text = Dr["codProd"].ToString();
             txtDescricao.Text = Dr["descricao"].ToString();
 
@@ -201,7 +171,7 @@ namespace Cadastro_de_produto
             comm.Parameters.Clear();
             comm.Parameters.Add("@codProd", MySqlDbType.Int32).Value = codProd;
             comm.Parameters.Add("@nome", MySqlDbType.VarChar, 100).Value = txtNome.Text;
-            comm.Parameters.Add("@preco", MySqlDbType.Decimal, 18).Value = txtPreco.Text;
+            comm.Parameters.Add("@preco", MySqlDbType.Decimal, 18).Value = nudPreco.Text;
             comm.Parameters.Add("@descricao", MySqlDbType.VarChar, 100).Value = txtDescricao.Text;
 
             comm.Connection = Conexao.obterConexao();
@@ -221,7 +191,7 @@ namespace Cadastro_de_produto
             {
                 MessageBox.Show("Produto atualizado com sucesso!");
                 txtNome.Clear();
-                txtPreco.Clear();
+                nudPreco.Value = 0;
                 txtDescricao.Clear();
             }
             else
@@ -244,7 +214,7 @@ namespace Cadastro_de_produto
                 deleteProduto(Convert.ToInt32(txtId.Text));
                 MessageBox.Show("Produto excluido com sucesso!");
                 txtNome.Text = "";
-                txtPreco.Clear();
+                nudPreco.Value = 0;
                 txtDescricao.Clear();
             }
             else
@@ -262,6 +232,13 @@ namespace Cadastro_de_produto
         {
             frmAtualizarProdutos abrir = new frmAtualizarProdutos();
             abrir.Show();
+            this.Hide();
+        }
+
+        private void mspVendas_Click(object sender, EventArgs e)
+        {
+            frmVendas abrir = new frmVendas();
+            abrir .Show();
             this.Hide();
         }
     }

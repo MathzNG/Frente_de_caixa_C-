@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Cadastro_de_produto
 {
@@ -29,6 +30,6 @@ namespace Cadastro_de_produto
             this.Hide();
         }
 
-      
+       
     }
 }

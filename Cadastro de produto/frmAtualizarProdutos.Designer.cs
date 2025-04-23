@@ -36,32 +36,30 @@
             // 
             // ltbPesquisar
             // 
-            this.ltbPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ltbPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ltbPesquisar.FormattingEnabled = true;
             this.ltbPesquisar.ItemHeight = 20;
-            this.ltbPesquisar.Location = new System.Drawing.Point(16, 167);
-            this.ltbPesquisar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ltbPesquisar.Location = new System.Drawing.Point(12, 87);
             this.ltbPesquisar.Name = "ltbPesquisar";
-            this.ltbPesquisar.Size = new System.Drawing.Size(561, 204);
+            this.ltbPesquisar.Size = new System.Drawing.Size(422, 164);
             this.ltbPesquisar.TabIndex = 11;
             this.ltbPesquisar.SelectedIndexChanged += new System.EventHandler(this.ltbPesquisar_SelectedIndexChanged);
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(16, 119);
-            this.txtNome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNome.Location = new System.Drawing.Point(12, 48);
             this.txtNome.MaxLength = 100;
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(432, 22);
-            this.txtNome.TabIndex = 12;
+            this.txtNome.Size = new System.Drawing.Size(325, 20);
+            this.txtNome.TabIndex = 0;
             // 
             // btnPesquisar
             // 
-            this.btnPesquisar.Location = new System.Drawing.Point(465, 13);
-            this.btnPesquisar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPesquisar.Location = new System.Drawing.Point(346, 27);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(117, 50);
-            this.btnPesquisar.TabIndex = 14;
+            this.btnPesquisar.Size = new System.Drawing.Size(88, 41);
+            this.btnPesquisar.TabIndex = 1;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
@@ -70,24 +68,22 @@
             // 
             this.lblNome.AutoSize = true;
             this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNome.Location = new System.Drawing.Point(12, 93);
-            this.lblNome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNome.Location = new System.Drawing.Point(12, 27);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(62, 24);
+            this.lblNome.Size = new System.Drawing.Size(49, 18);
             this.lblNome.TabIndex = 15;
             this.lblNome.Text = "Nome";
             // 
             // frmAtualizarProdutos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(595, 404);
+            this.ClientSize = new System.Drawing.Size(446, 268);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.ltbPesquisar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmAtualizarProdutos";
             this.Text = "Pesquisar Produtos";
             this.ResumeLayout(false);

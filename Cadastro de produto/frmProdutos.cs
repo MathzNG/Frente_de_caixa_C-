@@ -22,7 +22,7 @@ namespace Cadastro_de_produto
         {
             MySqlCommand comm = new MySqlCommand();
             comm.Connection = Conexao.obterConexao();
-            comm.CommandText = "select codProd as Codigo, nome as Produto, preco as Preço, descricao as Descrição from tbProdutos;";
+            comm.CommandText = "select codProd as Codigo, nome as Produto, preco as Preco, descricao as Descricao from tbProdutos;";
             comm.CommandType = CommandType.Text;
 
             MySqlDataReader da = comm.ExecuteReader();

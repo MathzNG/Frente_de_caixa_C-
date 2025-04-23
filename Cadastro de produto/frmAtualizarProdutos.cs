@@ -17,7 +17,7 @@ namespace Cadastro_de_produto
         public frmAtualizarProdutos()
         {
             InitializeComponent();
-        
+            txtNome.Focus();
         }
         
 
@@ -56,6 +56,11 @@ namespace Cadastro_de_produto
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
+            if(string.IsNullOrWhiteSpace(txtNome.Text))
+            {
+                MessageBox.Show("Digite o nome do produto para pesquisar.");
+                return;
+            }
             pesquisarPorNome(txtNome.Text);
         }
     }

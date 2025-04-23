@@ -11,7 +11,7 @@ namespace Cadastro_de_produto
             public long Id { get; set; }
             public string Nome { get; set; }
             public decimal Preco { get; set; }
-            public int Quantidade { get; set; }
+          
         public string Descricao { get; set; }
 
         public static List<Produto> ListaProdutos = new List<Produto>();

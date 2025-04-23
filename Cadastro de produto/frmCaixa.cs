@@ -87,6 +87,7 @@ namespace Cadastro_de_produto
         {
             FundoTransparente();
             ltbProdutos.ForeColor = Color.Red;
+            ltbProdutos.SelectedIndex = 0;
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)

@@ -42,5 +42,12 @@ namespace Cadastro_de_produto
         {
             Application.Exit();
         }
+
+        private void btnVendas_Click(object sender, EventArgs e)
+        {
+            frmVendas abrir = new frmVendas();
+            abrir.Show();
+            this.Hide();
+        }
     }
 }
