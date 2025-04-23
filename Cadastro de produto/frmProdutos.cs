@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Cadastro_de_produto
 {
@@ -17,6 +18,25 @@ namespace Cadastro_de_produto
             InitializeComponent();
         }
 
+        public void carregarProdutos()
+        {
+            MySqlCommand comm = new MySqlCommand();
+            comm.Connection = Conexao.obterConexao();
+            comm.CommandText = "select codProd as Codigo, nome as Produto, preco as Preço, descricao as Descrição from tbProdutos;";
+            comm.CommandType = CommandType.Text;
+
+            MySqlDataReader da = comm.ExecuteReader();
+            DataTable dataTable = new DataTable();
+            dataTable.Load(da);
+
+            dgvProdutos.DataSource = dataTable;
+        }
+
+        public void limparInformacoes()
+        {
+            dgvProdutos.DataSource = null;
+            dgvProdutos.Rows.Clear();
+        }
 
         private void frmProdutos_Load(object sender, EventArgs e)
         {
@@ -33,6 +53,23 @@ namespace Cadastro_de_produto
                     cell.ToolTipText = cell.Value?.ToString();
                 }
             }
+        }
+
+        private void carregaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            carregarProdutos();
+        }
+
+        private void limparToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            limparInformacoes();
+        }
+
+        private void voltarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMenu abrir = new frmMenu();  
+            abrir.Show();
+            this.Hide();
         }
     }
 }

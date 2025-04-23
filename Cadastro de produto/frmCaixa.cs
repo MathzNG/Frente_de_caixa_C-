@@ -20,8 +20,6 @@ namespace Cadastro_de_produto
         }
         public void LimparCampos()
         {
-           
-            
             lblInvisiblepreco.Text = "";
             lblInvisibleTotal.Text = "";
         }
@@ -110,19 +108,28 @@ namespace Cadastro_de_produto
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            int valorMultiplicador = Convert.ToInt32(numericUpDown1.Value);
+            double valorMultiplicador = Convert.ToInt32(nudQuantidade.Value);
             double valorProduto = Convert.ToDouble(lblInvisiblepreco.Text);
             double resultado = valorProduto * valorMultiplicador;
 
             lblInvisibleTotal.Text = resultado.ToString("C");
         }
-
-        private void btnConfirma_Click(object sender, EventArgs e)
+       
+        private void btnConfirma_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnConfirma_Click_1(sender, e);
+            }
+        }
+
+        private void btnConfirma_Click_1(object sender, EventArgs e)
+        {
+            
             string valor = lblInvisibleTotal.Text;
 
             DialogResult resultado = MessageBox.Show("Deseja confirmar a venda?",
-            "Confirmação", 
+            "Confirmação",
             MessageBoxButtons.YesNo,
             MessageBoxIcon.Question,
             MessageBoxDefaultButton.Button2);
@@ -131,6 +138,7 @@ namespace Cadastro_de_produto
             {
                 MessageBox.Show("Venda confirmada com sucesso!");
                 LimparCampos();
+               
             }
             else
             {
@@ -138,11 +146,11 @@ namespace Cadastro_de_produto
             }
         }
 
-        private void btnConfirma_KeyDown(object sender, KeyEventArgs e)
+        private void numericUpDown1_KeyDown(object sender, KeyEventArgs e)
         {
-        if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
-             
+                btnConfirma.Focus();
             }
         }
     }
