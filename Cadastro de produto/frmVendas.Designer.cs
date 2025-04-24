@@ -62,18 +62,21 @@
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.menuToolStripMenuItem.Text = "Menu";
+            this.menuToolStripMenuItem.Click += new System.EventHandler(this.menuToolStripMenuItem_Click);
             // 
             // cadastroToolStripMenuItem
             // 
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
             this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.cadastroToolStripMenuItem.Text = "Cadastro";
+            this.cadastroToolStripMenuItem.Click += new System.EventHandler(this.cadastroToolStripMenuItem_Click);
             // 
             // caixaToolStripMenuItem
             // 
             this.caixaToolStripMenuItem.Name = "caixaToolStripMenuItem";
             this.caixaToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.caixaToolStripMenuItem.Text = "Caixa";
+            this.caixaToolStripMenuItem.Click += new System.EventHandler(this.caixaToolStripMenuItem_Click);
             // 
             // produtosToolStripMenuItem
             // 
@@ -135,6 +138,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(487, 373);
             this.Controls.Add(this.lblTotaldasvendas);
             this.Controls.Add(this.maskedTextBox1);
@@ -142,7 +146,9 @@
             this.Controls.Add(this.ltbValor);
             this.Controls.Add(this.lblTotalvendas);
             this.Controls.Add(this.menuStrip1);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Name = "frmVendas";
             this.Text = "Vendas";
             this.menuStrip1.ResumeLayout(false);

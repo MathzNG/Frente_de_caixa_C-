@@ -55,6 +55,8 @@
             // 
             // btnPesquisar
             // 
+            this.btnPesquisar.FlatAppearance.BorderSize = 0;
+            this.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPesquisar.Location = new System.Drawing.Point(346, 27);
             this.btnPesquisar.Name = "btnPesquisar";
@@ -78,6 +80,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LavenderBlush;
             this.ClientSize = new System.Drawing.Size(446, 268);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.btnPesquisar);

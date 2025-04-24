@@ -37,7 +37,6 @@
             this.nudQuantidade = new System.Windows.Forms.NumericUpDown();
             this.lblInvisiblepreco = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.btnConfirma = new System.Windows.Forms.Button();
             this.pctFundo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantidade)).BeginInit();
@@ -86,7 +85,7 @@
             this.ltbProdutos.Location = new System.Drawing.Point(419, 12);
             this.ltbProdutos.Name = "ltbProdutos";
             this.ltbProdutos.Size = new System.Drawing.Size(349, 303);
-            this.ltbProdutos.TabIndex = 4;
+            this.ltbProdutos.TabIndex = 0;
             this.ltbProdutos.SelectedIndexChanged += new System.EventHandler(this.ltbProdutos_SelectedIndexChanged);
             // 
             // lblInvisibleTotal
@@ -105,7 +104,7 @@
             this.nudQuantidade.Location = new System.Drawing.Point(60, 342);
             this.nudQuantidade.Name = "nudQuantidade";
             this.nudQuantidade.Size = new System.Drawing.Size(97, 20);
-            this.nudQuantidade.TabIndex = 6;
+            this.nudQuantidade.TabIndex = 1;
             this.nudQuantidade.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             this.nudQuantidade.KeyDown += new System.Windows.Forms.KeyEventHandler(this.numericUpDown1_KeyDown);
             // 
@@ -128,21 +127,10 @@
             this.btnVoltar.Location = new System.Drawing.Point(12, 517);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(85, 28);
-            this.btnVoltar.TabIndex = 8;
+            this.btnVoltar.TabIndex = 3;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.CalendarMonthBackground = System.Drawing.Color.LightPink;
-            this.dateTimePicker2.CustomFormat = "HH:mm:ss";
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.dateTimePicker2.Location = new System.Drawing.Point(46, 32);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(91, 20);
-            this.dateTimePicker2.TabIndex = 10;
             // 
             // btnConfirma
             // 
@@ -153,7 +141,7 @@
             this.btnConfirma.Location = new System.Drawing.Point(673, 504);
             this.btnConfirma.Name = "btnConfirma";
             this.btnConfirma.Size = new System.Drawing.Size(85, 28);
-            this.btnConfirma.TabIndex = 12;
+            this.btnConfirma.TabIndex = 2;
             this.btnConfirma.Text = "Confirma";
             this.btnConfirma.UseVisualStyleBackColor = true;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click_1);
@@ -176,7 +164,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(780, 557);
             this.Controls.Add(this.btnConfirma);
-            this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.lblInvisiblepreco);
             this.Controls.Add(this.nudQuantidade);
@@ -207,7 +194,6 @@
         private System.Windows.Forms.NumericUpDown nudQuantidade;
         private System.Windows.Forms.Label lblInvisiblepreco;
         private System.Windows.Forms.Button btnVoltar;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Button btnConfirma;
         private System.Windows.Forms.PictureBox pctFundo;
     }

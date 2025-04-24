@@ -11,4 +11,5 @@ namespace Cadastro_de_produto
         public DateTime Data { get; set; }
         public decimal Valor { get; set; }
     }
+
 }

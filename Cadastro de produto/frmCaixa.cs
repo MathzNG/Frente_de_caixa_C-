@@ -8,11 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Asn1.Mozilla;
 
 namespace Cadastro_de_produto
 {
     public partial class frmCaixa : Form
     {
+
+        public string Valor { get; set; }
+
         public frmCaixa()
         {
             InitializeComponent();
@@ -37,6 +41,23 @@ namespace Cadastro_de_produto
                 ltbProdutos.Items.Add(dr["nome"].ToString());
             }
             Conexao.fecharConexao();
+        }
+        public int valorVenda()
+        {
+            MySqlCommand comm = new MySqlCommand();
+            comm.CommandText = "insert into tbVendas(valor)values(@valor);";
+            comm.CommandType = CommandType.Text;
+
+            comm.Parameters.Clear();
+            comm.Parameters.Add("@valor",MySqlDbType.Decimal,18).Value = lblInvisibleTotal.Text;
+
+            comm.Connection = Conexao.obterConexao();
+
+            int resp = comm.ExecuteNonQuery();
+
+            Conexao.fecharConexao();
+
+            return resp;
         }
 
         public void valorProduto(string nome)
@@ -87,7 +108,7 @@ namespace Cadastro_de_produto
         {
             FundoTransparente();
             ltbProdutos.ForeColor = Color.Red;
-            ltbProdutos.SelectedIndex = 0;
+            ltbProdutos.SelectedIndex = 1;
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -113,7 +134,7 @@ namespace Cadastro_de_produto
             double valorProduto = Convert.ToDouble(lblInvisiblepreco.Text);
             double resultado = valorProduto * valorMultiplicador;
 
-            lblInvisibleTotal.Text = resultado.ToString("C");
+            lblInvisibleTotal.Text = resultado.ToString();
         }
        
         private void btnConfirma_KeyDown(object sender, KeyEventArgs e)
@@ -126,9 +147,6 @@ namespace Cadastro_de_produto
 
         private void btnConfirma_Click_1(object sender, EventArgs e)
         {
-            
-            string valor = lblInvisibleTotal.Text;
-
             DialogResult resultado = MessageBox.Show("Deseja confirmar a venda?",
             "Confirmação",
             MessageBoxButtons.YesNo,
@@ -137,14 +155,15 @@ namespace Cadastro_de_produto
 
             if (resultado == DialogResult.Yes)
             {
+               string valor = lblInvisibleTotal.Text;
+                valorVenda();
+                
+
                 MessageBox.Show("Venda confirmada com sucesso!");
-                LimparCampos();
+                    LimparCampos();
                
             }
-            else
-            {
-                MessageBox.Show("Venda cancelada!");
-            }
+            
         }
 
         private void numericUpDown1_KeyDown(object sender, KeyEventArgs e)

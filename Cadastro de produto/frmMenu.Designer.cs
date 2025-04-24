@@ -144,6 +144,7 @@
             this.btnVendas.FlatAppearance.BorderSize = 0;
             this.btnVendas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVendas.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVendas.Image = ((System.Drawing.Image)(resources.GetObject("btnVendas.Image")));
             this.btnVendas.Location = new System.Drawing.Point(-1, 332);
             this.btnVendas.Name = "btnVendas";
             this.btnVendas.Size = new System.Drawing.Size(187, 48);
