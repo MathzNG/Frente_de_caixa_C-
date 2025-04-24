@@ -49,9 +49,10 @@
             this.lblPreco.AutoSize = true;
             this.lblPreco.Font = new System.Drawing.Font("Arial Narrow", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPreco.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblPreco.Location = new System.Drawing.Point(40, 159);
+            this.lblPreco.Location = new System.Drawing.Point(53, 196);
+            this.lblPreco.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPreco.Name = "lblPreco";
-            this.lblPreco.Size = new System.Drawing.Size(89, 31);
+            this.lblPreco.Size = new System.Drawing.Size(113, 40);
             this.lblPreco.TabIndex = 1;
             this.lblPreco.Text = "Preço :";
             // 
@@ -61,9 +62,10 @@
             this.lblQuantidade.AutoSize = true;
             this.lblQuantidade.Font = new System.Drawing.Font("Arial Narrow", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuantidade.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblQuantidade.Location = new System.Drawing.Point(40, 302);
+            this.lblQuantidade.Location = new System.Drawing.Point(53, 372);
+            this.lblQuantidade.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblQuantidade.Name = "lblQuantidade";
-            this.lblQuantidade.Size = new System.Drawing.Size(136, 31);
+            this.lblQuantidade.Size = new System.Drawing.Size(172, 40);
             this.lblQuantidade.TabIndex = 2;
             this.lblQuantidade.Text = "Quantidade";
             // 
@@ -73,9 +75,10 @@
             this.lblValorTotal.AutoSize = true;
             this.lblValorTotal.Font = new System.Drawing.Font("Arial Narrow", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblValorTotal.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblValorTotal.Location = new System.Drawing.Point(476, 409);
+            this.lblValorTotal.Location = new System.Drawing.Point(635, 503);
+            this.lblValorTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblValorTotal.Name = "lblValorTotal";
-            this.lblValorTotal.Size = new System.Drawing.Size(80, 31);
+            this.lblValorTotal.Size = new System.Drawing.Size(101, 40);
             this.lblValorTotal.TabIndex = 3;
             this.lblValorTotal.Text = "Total :";
             // 
@@ -83,9 +86,11 @@
             // 
             this.ltbProdutos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ltbProdutos.FormattingEnabled = true;
-            this.ltbProdutos.Location = new System.Drawing.Point(419, 12);
+            this.ltbProdutos.ItemHeight = 16;
+            this.ltbProdutos.Location = new System.Drawing.Point(559, 15);
+            this.ltbProdutos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ltbProdutos.Name = "ltbProdutos";
-            this.ltbProdutos.Size = new System.Drawing.Size(349, 303);
+            this.ltbProdutos.Size = new System.Drawing.Size(464, 372);
             this.ltbProdutos.TabIndex = 4;
             this.ltbProdutos.SelectedIndexChanged += new System.EventHandler(this.ltbProdutos_SelectedIndexChanged);
             // 
@@ -94,17 +99,19 @@
             this.lblInvisibleTotal.AutoSize = true;
             this.lblInvisibleTotal.Font = new System.Drawing.Font("Arial Narrow", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInvisibleTotal.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblInvisibleTotal.Location = new System.Drawing.Point(583, 413);
+            this.lblInvisibleTotal.Location = new System.Drawing.Point(777, 508);
+            this.lblInvisibleTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblInvisibleTotal.Name = "lblInvisibleTotal";
-            this.lblInvisibleTotal.Size = new System.Drawing.Size(0, 31);
+            this.lblInvisibleTotal.Size = new System.Drawing.Size(0, 40);
             this.lblInvisibleTotal.TabIndex = 5;
             // 
             // nudQuantidade
             // 
             this.nudQuantidade.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.nudQuantidade.Location = new System.Drawing.Point(60, 342);
+            this.nudQuantidade.Location = new System.Drawing.Point(80, 421);
+            this.nudQuantidade.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nudQuantidade.Name = "nudQuantidade";
-            this.nudQuantidade.Size = new System.Drawing.Size(97, 20);
+            this.nudQuantidade.Size = new System.Drawing.Size(129, 22);
             this.nudQuantidade.TabIndex = 6;
             this.nudQuantidade.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             this.nudQuantidade.KeyDown += new System.Windows.Forms.KeyEventHandler(this.numericUpDown1_KeyDown);
@@ -114,9 +121,10 @@
             this.lblInvisiblepreco.AutoSize = true;
             this.lblInvisiblepreco.Font = new System.Drawing.Font("Arial Narrow", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInvisiblepreco.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblInvisiblepreco.Location = new System.Drawing.Point(176, 159);
+            this.lblInvisiblepreco.Location = new System.Drawing.Point(235, 196);
+            this.lblInvisiblepreco.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblInvisiblepreco.Name = "lblInvisiblepreco";
-            this.lblInvisiblepreco.Size = new System.Drawing.Size(0, 31);
+            this.lblInvisiblepreco.Size = new System.Drawing.Size(0, 40);
             this.lblInvisiblepreco.TabIndex = 7;
             // 
             // btnVoltar
@@ -125,9 +133,10 @@
             this.btnVoltar.FlatAppearance.BorderSize = 0;
             this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoltar.Location = new System.Drawing.Point(12, 517);
+            this.btnVoltar.Location = new System.Drawing.Point(16, 636);
+            this.btnVoltar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(85, 28);
+            this.btnVoltar.Size = new System.Drawing.Size(113, 34);
             this.btnVoltar.TabIndex = 8;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
@@ -139,9 +148,10 @@
             this.dateTimePicker2.CustomFormat = "HH:mm:ss";
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker2.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.dateTimePicker2.Location = new System.Drawing.Point(46, 32);
+            this.dateTimePicker2.Location = new System.Drawing.Point(61, 39);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(91, 20);
+            this.dateTimePicker2.Size = new System.Drawing.Size(120, 22);
             this.dateTimePicker2.TabIndex = 10;
             // 
             // btnConfirma
@@ -150,9 +160,10 @@
             this.btnConfirma.FlatAppearance.BorderSize = 0;
             this.btnConfirma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirma.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirma.Location = new System.Drawing.Point(673, 504);
+            this.btnConfirma.Location = new System.Drawing.Point(897, 620);
+            this.btnConfirma.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnConfirma.Name = "btnConfirma";
-            this.btnConfirma.Size = new System.Drawing.Size(85, 28);
+            this.btnConfirma.Size = new System.Drawing.Size(113, 34);
             this.btnConfirma.TabIndex = 12;
             this.btnConfirma.Text = "Confirma";
             this.btnConfirma.UseVisualStyleBackColor = true;
@@ -161,20 +172,20 @@
             // 
             // pctFundo
             // 
-            this.pctFundo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pctFundo.Image = ((System.Drawing.Image)(resources.GetObject("pctFundo.Image")));
             this.pctFundo.Location = new System.Drawing.Point(0, 0);
+            this.pctFundo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pctFundo.Name = "pctFundo";
-            this.pctFundo.Size = new System.Drawing.Size(780, 557);
+            this.pctFundo.Size = new System.Drawing.Size(1040, 686);
             this.pctFundo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctFundo.TabIndex = 0;
             this.pctFundo.TabStop = false;
             // 
             // frmCaixa
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(780, 557);
+            this.ClientSize = new System.Drawing.Size(1040, 686);
             this.Controls.Add(this.btnConfirma);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.btnVoltar);
@@ -187,6 +198,7 @@
             this.Controls.Add(this.lblPreco);
             this.Controls.Add(this.pctFundo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmCaixa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Caixa";

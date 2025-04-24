@@ -87,7 +87,7 @@ namespace Cadastro_de_produto
         {
             FundoTransparente();
             ltbProdutos.ForeColor = Color.Red;
-            ltbProdutos.SelectedIndex = 0;
+            
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -139,7 +139,8 @@ namespace Cadastro_de_produto
             {
                 MessageBox.Show("Venda confirmada com sucesso!");
                 LimparCampos();
-               
+                nudQuantidade.Value = 0;
+
             }
             else
             {
@@ -153,6 +154,11 @@ namespace Cadastro_de_produto
             {
                 btnConfirma.Focus();
             }
+        }
+
+        private void ltbProdutos_KeyDown(object sender, KeyEventArgs e)
+        {
+
         }
     }
 }
