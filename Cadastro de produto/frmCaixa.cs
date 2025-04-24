@@ -108,7 +108,11 @@ namespace Cadastro_de_produto
         {
             FundoTransparente();
             ltbProdutos.ForeColor = Color.Red;
+<<<<<<< HEAD
             ltbProdutos.SelectedIndex = 1;
+=======
+            
+>>>>>>> 784f0f97c79920cbaab817307a15878804a7dea2
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -160,8 +164,14 @@ namespace Cadastro_de_produto
                 
 
                 MessageBox.Show("Venda confirmada com sucesso!");
+<<<<<<< HEAD
                     LimparCampos();
                
+=======
+                LimparCampos();
+                nudQuantidade.Value = 0;
+
+>>>>>>> 784f0f97c79920cbaab817307a15878804a7dea2
             }
             
         }
@@ -172,6 +182,11 @@ namespace Cadastro_de_produto
             {
                 btnConfirma.Focus();
             }
+        }
+
+        private void ltbProdutos_KeyDown(object sender, KeyEventArgs e)
+        {
+
         }
     }
 }
