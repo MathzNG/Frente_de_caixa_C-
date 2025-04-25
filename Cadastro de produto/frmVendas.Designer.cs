@@ -33,11 +33,13 @@
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.caixaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.produtosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblTotalvendas = new System.Windows.Forms.Label();
-            this.ltbValor = new System.Windows.Forms.ListBox();
             this.lblData = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.lblTotaldasvendas = new System.Windows.Forms.Label();
+            this.mskData = new System.Windows.Forms.MaskedTextBox();
+            this.ltbVenda = new System.Windows.Forms.ListBox();
+            this.lblValor = new System.Windows.Forms.Label();
+            this.lblTotalVenda = new System.Windows.Forms.Label();
+            this.txtTotalVenda = new System.Windows.Forms.TextBox();
+            this.btnPesquisa = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,54 +87,68 @@
             this.produtosToolStripMenuItem.Text = "Produtos";
             this.produtosToolStripMenuItem.Click += new System.EventHandler(this.produtosToolStripMenuItem_Click);
             // 
-            // lblTotalvendas
-            // 
-            this.lblTotalvendas.AutoSize = true;
-            this.lblTotalvendas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalvendas.Location = new System.Drawing.Point(35, 191);
-            this.lblTotalvendas.Name = "lblTotalvendas";
-            this.lblTotalvendas.Size = new System.Drawing.Size(118, 18);
-            this.lblTotalvendas.TabIndex = 1;
-            this.lblTotalvendas.Text = "Total de Vendas:";
-            // 
-            // ltbValor
-            // 
-            this.ltbValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ltbValor.FormattingEnabled = true;
-            this.ltbValor.ItemHeight = 18;
-            this.ltbValor.Location = new System.Drawing.Point(204, 61);
-            this.ltbValor.Name = "ltbValor";
-            this.ltbValor.Size = new System.Drawing.Size(262, 220);
-            this.ltbValor.TabIndex = 3;
-            // 
             // lblData
             // 
             this.lblData.AutoSize = true;
             this.lblData.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblData.Location = new System.Drawing.Point(35, 90);
+            this.lblData.Location = new System.Drawing.Point(21, 46);
             this.lblData.Name = "lblData";
             this.lblData.Size = new System.Drawing.Size(104, 18);
             this.lblData.TabIndex = 6;
             this.lblData.Text = "Data da Venda";
             // 
-            // maskedTextBox1
+            // mskData
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(51, 111);
-            this.maskedTextBox1.Mask = "99/99/9999";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(74, 20);
-            this.maskedTextBox1.TabIndex = 7;
+            this.mskData.Location = new System.Drawing.Point(24, 67);
+            this.mskData.Mask = "9999/99/99";
+            this.mskData.Name = "mskData";
+            this.mskData.Size = new System.Drawing.Size(69, 20);
+            this.mskData.TabIndex = 7;
             // 
-            // lblTotaldasvendas
+            // ltbVenda
             // 
-            this.lblTotaldasvendas.AutoSize = true;
-            this.lblTotaldasvendas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotaldasvendas.Location = new System.Drawing.Point(33, 238);
-            this.lblTotaldasvendas.Name = "lblTotaldasvendas";
-            this.lblTotaldasvendas.Size = new System.Drawing.Size(123, 25);
-            this.lblTotaldasvendas.TabIndex = 8;
-            this.lblTotaldasvendas.Text = "lblInvisivel";
-            this.lblTotaldasvendas.Visible = false;
+            this.ltbVenda.FormattingEnabled = true;
+            this.ltbVenda.Location = new System.Drawing.Point(192, 110);
+            this.ltbVenda.Name = "ltbVenda";
+            this.ltbVenda.Size = new System.Drawing.Size(283, 251);
+            this.ltbVenda.TabIndex = 8;
+            // 
+            // lblValor
+            // 
+            this.lblValor.AutoSize = true;
+            this.lblValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValor.Location = new System.Drawing.Point(188, 87);
+            this.lblValor.Name = "lblValor";
+            this.lblValor.Size = new System.Drawing.Size(50, 20);
+            this.lblValor.TabIndex = 9;
+            this.lblValor.Text = "Valor ";
+            // 
+            // lblTotalVenda
+            // 
+            this.lblTotalVenda.AutoSize = true;
+            this.lblTotalVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalVenda.Location = new System.Drawing.Point(20, 140);
+            this.lblTotalVenda.Name = "lblTotalVenda";
+            this.lblTotalVenda.Size = new System.Drawing.Size(95, 20);
+            this.lblTotalVenda.TabIndex = 10;
+            this.lblTotalVenda.Text = "Total Venda";
+            // 
+            // txtTotalVenda
+            // 
+            this.txtTotalVenda.Location = new System.Drawing.Point(24, 163);
+            this.txtTotalVenda.Name = "txtTotalVenda";
+            this.txtTotalVenda.Size = new System.Drawing.Size(151, 20);
+            this.txtTotalVenda.TabIndex = 11;
+            // 
+            // btnPesquisa
+            // 
+            this.btnPesquisa.Location = new System.Drawing.Point(373, 41);
+            this.btnPesquisa.Name = "btnPesquisa";
+            this.btnPesquisa.Size = new System.Drawing.Size(102, 30);
+            this.btnPesquisa.TabIndex = 12;
+            this.btnPesquisa.Text = "Pesquisa";
+            this.btnPesquisa.UseVisualStyleBackColor = true;
+            this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
             // 
             // frmVendas
             // 
@@ -140,15 +156,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(487, 373);
-            this.Controls.Add(this.lblTotaldasvendas);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.btnPesquisa);
+            this.Controls.Add(this.txtTotalVenda);
+            this.Controls.Add(this.lblTotalVenda);
+            this.Controls.Add(this.lblValor);
+            this.Controls.Add(this.ltbVenda);
+            this.Controls.Add(this.mskData);
             this.Controls.Add(this.lblData);
-            this.Controls.Add(this.ltbValor);
-            this.Controls.Add(this.lblTotalvendas);
             this.Controls.Add(this.menuStrip1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Name = "frmVendas";
             this.Text = "Vendas";
             this.menuStrip1.ResumeLayout(false);
@@ -164,10 +181,12 @@
         private System.Windows.Forms.ToolStripMenuItem cadastroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem caixaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem produtosToolStripMenuItem;
-        private System.Windows.Forms.Label lblTotalvendas;
-        private System.Windows.Forms.ListBox ltbValor;
         private System.Windows.Forms.Label lblData;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.Label lblTotaldasvendas;
+        private System.Windows.Forms.MaskedTextBox mskData;
+        private System.Windows.Forms.ListBox ltbVenda;
+        private System.Windows.Forms.Label lblValor;
+        private System.Windows.Forms.Label lblTotalVenda;
+        private System.Windows.Forms.TextBox txtTotalVenda;
+        private System.Windows.Forms.Button btnPesquisa;
     }
 }

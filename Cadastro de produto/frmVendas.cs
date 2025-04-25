@@ -14,33 +14,34 @@ namespace Cadastro_de_produto
     public partial class frmVendas : Form
     {
 
-        
-
-
         public frmVendas()
         {
             InitializeComponent();
-            verVenda();
+            
         }
-        public frmVendas(string valor)
-        {
-            InitializeComponent();
-            ltbValor.Items.Add(valor);
-        }
-        public void verVenda()
+
+        public void pesquisarPorData(string data)
         {
             MySqlCommand comm = new MySqlCommand();
-            comm.CommandText = "select valor from tbVendas;";
+            comm.CommandText = "select valor from tbVendas where dataVenda = @dataVenda;";
             comm.CommandType = CommandType.Text;
+
+            comm.Parameters.Clear();
+            comm.Parameters.Add("@dataVenda", MySqlDbType.Date).Value = data;
             comm.Connection = Conexao.obterConexao();
 
-            MySqlDataReader dr = comm.ExecuteReader();
-            while(dr.Read())
-            {  
-                ltbValor.Items.Add(dr["valor"].ToString());
+            MySqlDataReader DR;
+            DR = comm.ExecuteReader();
+
+            while (DR.Read())
+            {
+                ltbVenda.Items.Add((DR.GetDecimal(0)));
             }
+
             Conexao.fecharConexao();
         }
+
+        
 
         private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -68,6 +69,16 @@ namespace Cadastro_de_produto
             frmCaixa abrir = new frmCaixa();
             abrir.Show();
             this.Hide();
+        }
+
+        private void btnPesquisa_Click(object sender, EventArgs e)
+        {
+            if(string.IsNullOrWhiteSpace(mskData.Text))
+            {
+                MessageBox.Show("Digite a data da venda para pesquisar.");
+                return;
+            }
+            pesquisarPorData(mskData.Text);
         }
     }
 }

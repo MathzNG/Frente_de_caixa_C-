@@ -45,11 +45,12 @@ namespace Cadastro_de_produto
         public int valorVenda()
         {
             MySqlCommand comm = new MySqlCommand();
-            comm.CommandText = "insert into tbVendas(valor)values(@valor);";
+            comm.CommandText = "insert into tbVendas(valor,dataVenda)values(@valor,@dataVenda);";
             comm.CommandType = CommandType.Text;
 
             comm.Parameters.Clear();
             comm.Parameters.Add("@valor",MySqlDbType.Decimal,18).Value = lblInvisibleTotal.Text;
+            comm.Parameters.Add("@dataVenda",MySqlDbType.Date).Value = dtpDataVenda.Text;
 
             comm.Connection = Conexao.obterConexao();
 
@@ -107,12 +108,6 @@ namespace Cadastro_de_produto
         private void frmCaixa_Load(object sender, EventArgs e)
         {
             FundoTransparente();
-            ltbProdutos.ForeColor = Color.Red;
-<<<<<<< HEAD
-            ltbProdutos.SelectedIndex = 1;
-=======
-            
->>>>>>> 784f0f97c79920cbaab817307a15878804a7dea2
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -161,19 +156,9 @@ namespace Cadastro_de_produto
             {
                string valor = lblInvisibleTotal.Text;
                 valorVenda();
-                
-
                 MessageBox.Show("Venda confirmada com sucesso!");
-<<<<<<< HEAD
-                    LimparCampos();
-               
-=======
                 LimparCampos();
-                nudQuantidade.Value = 0;
-
->>>>>>> 784f0f97c79920cbaab817307a15878804a7dea2
             }
-            
         }
 
         private void numericUpDown1_KeyDown(object sender, KeyEventArgs e)
@@ -182,11 +167,6 @@ namespace Cadastro_de_produto
             {
                 btnConfirma.Focus();
             }
-        }
-
-        private void ltbProdutos_KeyDown(object sender, KeyEventArgs e)
-        {
-
         }
     }
 }
