@@ -15,14 +15,14 @@ primary key (codProd)
 create table tbVendas(
 codVend int not null auto_increment,
 dataVenda datetime,
-valor varchar(100),
-codProd int not null,
-primary key (codVend),
-foreign key (codProd) references tbProdutos(codProd)
+valor decimal(9,2),
+primary key (codVend)
 );
 
 desc tbProdutos;
 desc tbVendas;
+
+-- insert into tbVendas(valor) values();
 
 -- insert into tbProdutos(nome,preco,descricao) values();
 
