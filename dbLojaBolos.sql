@@ -1,4 +1,4 @@
--- drop database dbLojaBolos;
+drop database dbLojaBolos;
 
 create database dbLojaBolos;
 
@@ -14,9 +14,13 @@ primary key (codProd)
 
 create table tbVendas(
 codVend int not null auto_increment,
+nome varchar(100),
 dataVenda datetime,
 valor decimal(9,2),
-primary key (codVend)
+quantidade char(100),
+codProd int not null,
+primary key (codVend),
+foreign key (codProd) references tbProdutos(codProd) 
 );
 
 desc tbProdutos;
@@ -35,3 +39,6 @@ desc tbVendas;
 -- update tbProdutos set nome = nome,preco = preco,descricao = descricao where codProd = codProd;
 
 -- delete from tbProdutos where codProd = codProd;
+
+-- select nome,quantidade from tbVendas where dataVenda = dataVenda;**
+

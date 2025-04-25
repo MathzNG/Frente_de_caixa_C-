@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using Org.BouncyCastle.Asn1.Mozilla;
+
 
 namespace Cadastro_de_produto
 {
@@ -46,24 +46,17 @@ namespace Cadastro_de_produto
         public int valorVenda()
         {
             MySqlCommand comm = new MySqlCommand();
-<<<<<<< HEAD
-            comm.CommandText = "insert into tbVendas(valor,dataVenda)values(@valor,@dataVenda);";
+
+            comm.CommandText = "insert into tbVendas(valor,dataVenda,quantidade)values(@valor,@dataVenda,@quantidade);";
             comm.CommandType = CommandType.Text;
 
             comm.Parameters.Clear();
             comm.Parameters.Add("@valor",MySqlDbType.Decimal,18).Value = lblInvisibleTotal.Text;
             comm.Parameters.Add("@dataVenda",MySqlDbType.Date).Value = dtpDataVenda.Text;
+            comm.Parameters.Add("@quantidade", MySqlDbType.VarChar).Value = nudQuantidade.Value;
 
             comm.Connection = Conexao.obterConexao();
-=======
-            comm.Connection = Conexao.obterConexao();
-            comm.CommandText = "insert into tbVendas(valor) values(@valor);";
-            comm.CommandType = CommandType.Text;
-
             comm.Parameters.Clear();
-            comm.Parameters.Add("@valor",MySqlDbType.VarChar,100).Value = lblInvisibleTotal.Text;
->>>>>>> 1196cfc3d3eda50cb68f7f6f6c81d3638fc9f997
-
             int resp = comm.ExecuteNonQuery();
 
             Conexao.fecharConexao();
@@ -167,16 +160,16 @@ namespace Cadastro_de_produto
             if (resul == DialogResult.Yes)
             { 
                 valorVenda();
-<<<<<<< HEAD
+
                 MessageBox.Show("Venda confirmada com sucesso!");
                 LimparCampos();
-=======
+
                 MessageBox.Show("Sucesso");
             }
             else
             {
                 MessageBox.Show("Erro");
->>>>>>> 1196cfc3d3eda50cb68f7f6f6c81d3638fc9f997
+
             }
         }
 
