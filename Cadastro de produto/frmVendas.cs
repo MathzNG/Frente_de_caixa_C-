@@ -13,10 +13,6 @@ namespace Cadastro_de_produto
 {
     public partial class frmVendas : Form
     {
-
-        
-
-
         public frmVendas()
         {
             InitializeComponent();

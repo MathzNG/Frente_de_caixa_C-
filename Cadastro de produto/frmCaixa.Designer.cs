@@ -87,15 +87,10 @@
             this.ltbProdutos.FormattingEnabled = true;
             this.ltbProdutos.ItemHeight = 16;
             this.ltbProdutos.Location = new System.Drawing.Point(559, 15);
-            this.ltbProdutos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ltbProdutos.Margin = new System.Windows.Forms.Padding(4);
             this.ltbProdutos.Name = "ltbProdutos";
-<<<<<<< HEAD
-            this.ltbProdutos.Size = new System.Drawing.Size(349, 303);
-            this.ltbProdutos.TabIndex = 0;
-=======
             this.ltbProdutos.Size = new System.Drawing.Size(464, 372);
             this.ltbProdutos.TabIndex = 4;
->>>>>>> 784f0f97c79920cbaab817307a15878804a7dea2
             this.ltbProdutos.SelectedIndexChanged += new System.EventHandler(this.ltbProdutos_SelectedIndexChanged);
             // 
             // lblInvisibleTotal
@@ -113,16 +108,10 @@
             // 
             this.nudQuantidade.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.nudQuantidade.Location = new System.Drawing.Point(80, 421);
-            this.nudQuantidade.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nudQuantidade.Margin = new System.Windows.Forms.Padding(4);
             this.nudQuantidade.Name = "nudQuantidade";
-<<<<<<< HEAD
-            this.nudQuantidade.Size = new System.Drawing.Size(97, 20);
-            this.nudQuantidade.TabIndex = 1;
-=======
             this.nudQuantidade.Size = new System.Drawing.Size(129, 22);
             this.nudQuantidade.TabIndex = 6;
->>>>>>> 784f0f97c79920cbaab817307a15878804a7dea2
-            this.nudQuantidade.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             this.nudQuantidade.KeyDown += new System.Windows.Forms.KeyEventHandler(this.numericUpDown1_KeyDown);
             // 
             // lblInvisiblepreco
@@ -143,34 +132,14 @@
             this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVoltar.Location = new System.Drawing.Point(16, 636);
-            this.btnVoltar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVoltar.Margin = new System.Windows.Forms.Padding(4);
             this.btnVoltar.Name = "btnVoltar";
-<<<<<<< HEAD
-            this.btnVoltar.Size = new System.Drawing.Size(85, 28);
-            this.btnVoltar.TabIndex = 3;
-=======
             this.btnVoltar.Size = new System.Drawing.Size(113, 34);
             this.btnVoltar.TabIndex = 8;
->>>>>>> 784f0f97c79920cbaab817307a15878804a7dea2
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
-<<<<<<< HEAD
-=======
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.CalendarMonthBackground = System.Drawing.Color.LightPink;
-            this.dateTimePicker2.CustomFormat = "HH:mm:ss";
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.dateTimePicker2.Location = new System.Drawing.Point(61, 39);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(120, 22);
-            this.dateTimePicker2.TabIndex = 10;
-            // 
->>>>>>> 784f0f97c79920cbaab817307a15878804a7dea2
             // btnConfirma
             // 
             this.btnConfirma.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -178,15 +147,10 @@
             this.btnConfirma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirma.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirma.Location = new System.Drawing.Point(897, 620);
-            this.btnConfirma.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConfirma.Margin = new System.Windows.Forms.Padding(4);
             this.btnConfirma.Name = "btnConfirma";
-<<<<<<< HEAD
-            this.btnConfirma.Size = new System.Drawing.Size(85, 28);
-            this.btnConfirma.TabIndex = 2;
-=======
             this.btnConfirma.Size = new System.Drawing.Size(113, 34);
             this.btnConfirma.TabIndex = 12;
->>>>>>> 784f0f97c79920cbaab817307a15878804a7dea2
             this.btnConfirma.Text = "Confirma";
             this.btnConfirma.UseVisualStyleBackColor = true;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click_1);
@@ -196,7 +160,7 @@
             // 
             this.pctFundo.Image = ((System.Drawing.Image)(resources.GetObject("pctFundo.Image")));
             this.pctFundo.Location = new System.Drawing.Point(0, 0);
-            this.pctFundo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pctFundo.Margin = new System.Windows.Forms.Padding(4);
             this.pctFundo.Name = "pctFundo";
             this.pctFundo.Size = new System.Drawing.Size(1040, 686);
             this.pctFundo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -219,7 +183,7 @@
             this.Controls.Add(this.lblPreco);
             this.Controls.Add(this.pctFundo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmCaixa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Caixa";

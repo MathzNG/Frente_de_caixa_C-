@@ -32,26 +32,26 @@ namespace Cadastro_de_produto
 
             MySqlCommand comm = new MySqlCommand();
             comm.Connection = Conexao.obterConexao();
-            comm.CommandText = "select nome from tbProdutos;";
+            comm.CommandText = "select nome,codProd from tbProdutos;";
             comm.CommandType = CommandType.Text;
 
             MySqlDataReader dr = comm.ExecuteReader();
             while (dr.Read())
             {
                 ltbProdutos.Items.Add(dr["nome"].ToString());
+                
             }
             Conexao.fecharConexao();
         }
         public int valorVenda()
         {
             MySqlCommand comm = new MySqlCommand();
-            comm.CommandText = "insert into tbVendas(valor)values(@valor);";
+            comm.Connection = Conexao.obterConexao();
+            comm.CommandText = "insert into tbVendas(valor) values(@valor);";
             comm.CommandType = CommandType.Text;
 
             comm.Parameters.Clear();
-            comm.Parameters.Add("@valor",MySqlDbType.Decimal,18).Value = lblInvisibleTotal.Text;
-
-            comm.Connection = Conexao.obterConexao();
+            comm.Parameters.Add("@valor",MySqlDbType.VarChar,100).Value = lblInvisibleTotal.Text;
 
             int resp = comm.ExecuteNonQuery();
 
@@ -107,12 +107,6 @@ namespace Cadastro_de_produto
         private void frmCaixa_Load(object sender, EventArgs e)
         {
             FundoTransparente();
-            ltbProdutos.ForeColor = Color.Red;
-<<<<<<< HEAD
-            ltbProdutos.SelectedIndex = 1;
-=======
-            
->>>>>>> 784f0f97c79920cbaab817307a15878804a7dea2
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -134,11 +128,7 @@ namespace Cadastro_de_produto
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            double valorMultiplicador = Convert.ToInt32(nudQuantidade.Value);
-            double valorProduto = Convert.ToDouble(lblInvisiblepreco.Text);
-            double resultado = valorProduto * valorMultiplicador;
-
-            lblInvisibleTotal.Text = resultado.ToString();
+            
         }
        
         private void btnConfirma_KeyDown(object sender, KeyEventArgs e)
@@ -151,27 +141,26 @@ namespace Cadastro_de_produto
 
         private void btnConfirma_Click_1(object sender, EventArgs e)
         {
-            DialogResult resultado = MessageBox.Show("Deseja confirmar a venda?",
+            double valorMultiplicador = Convert.ToInt32(nudQuantidade.Value);
+            double valorProduto = Convert.ToDouble(lblInvisiblepreco.Text);
+            double resultado = valorProduto * valorMultiplicador;
+
+            lblInvisibleTotal.Text = resultado.ToString();
+
+            DialogResult resul = MessageBox.Show("Deseja confirmar a venda?",
             "Confirmação",
             MessageBoxButtons.YesNo,
             MessageBoxIcon.Question,
             MessageBoxDefaultButton.Button2);
 
-            if (resultado == DialogResult.Yes)
-            {
-               string valor = lblInvisibleTotal.Text;
+            if (resul == DialogResult.Yes)
+            { 
                 valorVenda();
-                
-
-                MessageBox.Show("Venda confirmada com sucesso!");
-<<<<<<< HEAD
-                    LimparCampos();
-               
-=======
-                LimparCampos();
-                nudQuantidade.Value = 0;
-
->>>>>>> 784f0f97c79920cbaab817307a15878804a7dea2
+                MessageBox.Show("Sucesso");
+            }
+            else
+            {
+                MessageBox.Show("Erro");
             }
             
         }
