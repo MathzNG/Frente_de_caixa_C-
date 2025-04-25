@@ -84,9 +84,17 @@
             // 
             this.ltbProdutos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ltbProdutos.FormattingEnabled = true;
+<<<<<<< HEAD
             this.ltbProdutos.Location = new System.Drawing.Point(419, 12);
             this.ltbProdutos.Name = "ltbProdutos";
             this.ltbProdutos.Size = new System.Drawing.Size(349, 303);
+=======
+            this.ltbProdutos.ItemHeight = 16;
+            this.ltbProdutos.Location = new System.Drawing.Point(559, 15);
+            this.ltbProdutos.Margin = new System.Windows.Forms.Padding(4);
+            this.ltbProdutos.Name = "ltbProdutos";
+            this.ltbProdutos.Size = new System.Drawing.Size(464, 372);
+>>>>>>> 1196cfc3d3eda50cb68f7f6f6c81d3638fc9f997
             this.ltbProdutos.TabIndex = 4;
             this.ltbProdutos.SelectedIndexChanged += new System.EventHandler(this.ltbProdutos_SelectedIndexChanged);
             // 
@@ -103,11 +111,19 @@
             // nudQuantidade
             // 
             this.nudQuantidade.Anchor = System.Windows.Forms.AnchorStyles.Left;
+<<<<<<< HEAD
             this.nudQuantidade.Location = new System.Drawing.Point(60, 342);
             this.nudQuantidade.Name = "nudQuantidade";
             this.nudQuantidade.Size = new System.Drawing.Size(97, 20);
             this.nudQuantidade.TabIndex = 6;
             this.nudQuantidade.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+=======
+            this.nudQuantidade.Location = new System.Drawing.Point(80, 421);
+            this.nudQuantidade.Margin = new System.Windows.Forms.Padding(4);
+            this.nudQuantidade.Name = "nudQuantidade";
+            this.nudQuantidade.Size = new System.Drawing.Size(129, 22);
+            this.nudQuantidade.TabIndex = 6;
+>>>>>>> 1196cfc3d3eda50cb68f7f6f6c81d3638fc9f997
             this.nudQuantidade.KeyDown += new System.Windows.Forms.KeyEventHandler(this.numericUpDown1_KeyDown);
             // 
             // lblInvisiblepreco
@@ -126,9 +142,16 @@
             this.btnVoltar.FlatAppearance.BorderSize = 0;
             this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.btnVoltar.Location = new System.Drawing.Point(12, 517);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(85, 28);
+=======
+            this.btnVoltar.Location = new System.Drawing.Point(16, 636);
+            this.btnVoltar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(113, 34);
+>>>>>>> 1196cfc3d3eda50cb68f7f6f6c81d3638fc9f997
             this.btnVoltar.TabIndex = 8;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
@@ -140,9 +163,16 @@
             this.btnConfirma.FlatAppearance.BorderSize = 0;
             this.btnConfirma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirma.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.btnConfirma.Location = new System.Drawing.Point(673, 504);
             this.btnConfirma.Name = "btnConfirma";
             this.btnConfirma.Size = new System.Drawing.Size(85, 28);
+=======
+            this.btnConfirma.Location = new System.Drawing.Point(897, 620);
+            this.btnConfirma.Margin = new System.Windows.Forms.Padding(4);
+            this.btnConfirma.Name = "btnConfirma";
+            this.btnConfirma.Size = new System.Drawing.Size(113, 34);
+>>>>>>> 1196cfc3d3eda50cb68f7f6f6c81d3638fc9f997
             this.btnConfirma.TabIndex = 12;
             this.btnConfirma.Text = "Confirma";
             this.btnConfirma.UseVisualStyleBackColor = true;
@@ -153,6 +183,10 @@
             // 
             this.pctFundo.Image = ((System.Drawing.Image)(resources.GetObject("pctFundo.Image")));
             this.pctFundo.Location = new System.Drawing.Point(0, 0);
+<<<<<<< HEAD
+=======
+            this.pctFundo.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> 1196cfc3d3eda50cb68f7f6f6c81d3638fc9f997
             this.pctFundo.Name = "pctFundo";
             this.pctFundo.Size = new System.Drawing.Size(780, 557);
             this.pctFundo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -194,6 +228,10 @@
             this.Controls.Add(this.lblPreco);
             this.Controls.Add(this.pctFundo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+<<<<<<< HEAD
+=======
+            this.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> 1196cfc3d3eda50cb68f7f6f6c81d3638fc9f997
             this.Name = "frmCaixa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Caixa";

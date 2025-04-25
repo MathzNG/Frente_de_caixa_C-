@@ -13,7 +13,10 @@ namespace Cadastro_de_produto
 {
     public partial class frmVendas : Form
     {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1196cfc3d3eda50cb68f7f6f6c81d3638fc9f997
         public frmVendas()
         {
             InitializeComponent();

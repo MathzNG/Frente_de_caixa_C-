@@ -32,19 +32,21 @@ namespace Cadastro_de_produto
 
             MySqlCommand comm = new MySqlCommand();
             comm.Connection = Conexao.obterConexao();
-            comm.CommandText = "select nome from tbProdutos;";
+            comm.CommandText = "select nome,codProd from tbProdutos;";
             comm.CommandType = CommandType.Text;
 
             MySqlDataReader dr = comm.ExecuteReader();
             while (dr.Read())
             {
                 ltbProdutos.Items.Add(dr["nome"].ToString());
+                
             }
             Conexao.fecharConexao();
         }
         public int valorVenda()
         {
             MySqlCommand comm = new MySqlCommand();
+<<<<<<< HEAD
             comm.CommandText = "insert into tbVendas(valor,dataVenda)values(@valor,@dataVenda);";
             comm.CommandType = CommandType.Text;
 
@@ -53,6 +55,14 @@ namespace Cadastro_de_produto
             comm.Parameters.Add("@dataVenda",MySqlDbType.Date).Value = dtpDataVenda.Text;
 
             comm.Connection = Conexao.obterConexao();
+=======
+            comm.Connection = Conexao.obterConexao();
+            comm.CommandText = "insert into tbVendas(valor) values(@valor);";
+            comm.CommandType = CommandType.Text;
+
+            comm.Parameters.Clear();
+            comm.Parameters.Add("@valor",MySqlDbType.VarChar,100).Value = lblInvisibleTotal.Text;
+>>>>>>> 1196cfc3d3eda50cb68f7f6f6c81d3638fc9f997
 
             int resp = comm.ExecuteNonQuery();
 
@@ -129,11 +139,7 @@ namespace Cadastro_de_produto
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            double valorMultiplicador = Convert.ToInt32(nudQuantidade.Value);
-            double valorProduto = Convert.ToDouble(lblInvisiblepreco.Text);
-            double resultado = valorProduto * valorMultiplicador;
-
-            lblInvisibleTotal.Text = resultado.ToString();
+            
         }
        
         private void btnConfirma_KeyDown(object sender, KeyEventArgs e)
@@ -146,18 +152,31 @@ namespace Cadastro_de_produto
 
         private void btnConfirma_Click_1(object sender, EventArgs e)
         {
-            DialogResult resultado = MessageBox.Show("Deseja confirmar a venda?",
+            double valorMultiplicador = Convert.ToInt32(nudQuantidade.Value);
+            double valorProduto = Convert.ToDouble(lblInvisiblepreco.Text);
+            double resultado = valorProduto * valorMultiplicador;
+
+            lblInvisibleTotal.Text = resultado.ToString();
+
+            DialogResult resul = MessageBox.Show("Deseja confirmar a venda?",
             "Confirmação",
             MessageBoxButtons.YesNo,
             MessageBoxIcon.Question,
             MessageBoxDefaultButton.Button2);
 
-            if (resultado == DialogResult.Yes)
-            {
-               string valor = lblInvisibleTotal.Text;
+            if (resul == DialogResult.Yes)
+            { 
                 valorVenda();
+<<<<<<< HEAD
                 MessageBox.Show("Venda confirmada com sucesso!");
                 LimparCampos();
+=======
+                MessageBox.Show("Sucesso");
+            }
+            else
+            {
+                MessageBox.Show("Erro");
+>>>>>>> 1196cfc3d3eda50cb68f7f6f6c81d3638fc9f997
             }
         }
 
