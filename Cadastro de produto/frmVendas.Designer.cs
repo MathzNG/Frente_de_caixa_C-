@@ -54,36 +54,36 @@
             this.produtosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(487, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(649, 28);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // menuToolStripMenuItem
             // 
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(60, 26);
             this.menuToolStripMenuItem.Text = "Menu";
             this.menuToolStripMenuItem.Click += new System.EventHandler(this.menuToolStripMenuItem_Click);
             // 
             // cadastroToolStripMenuItem
             // 
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(82, 26);
             this.cadastroToolStripMenuItem.Text = "Cadastro";
             this.cadastroToolStripMenuItem.Click += new System.EventHandler(this.cadastroToolStripMenuItem_Click);
             // 
             // caixaToolStripMenuItem
             // 
             this.caixaToolStripMenuItem.Name = "caixaToolStripMenuItem";
-            this.caixaToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.caixaToolStripMenuItem.Size = new System.Drawing.Size(59, 26);
             this.caixaToolStripMenuItem.Text = "Caixa";
             this.caixaToolStripMenuItem.Click += new System.EventHandler(this.caixaToolStripMenuItem_Click);
             // 
             // produtosToolStripMenuItem
             // 
             this.produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
-            this.produtosToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.produtosToolStripMenuItem.Size = new System.Drawing.Size(82, 26);
             this.produtosToolStripMenuItem.Text = "Produtos";
             this.produtosToolStripMenuItem.Click += new System.EventHandler(this.produtosToolStripMenuItem_Click);
             // 
@@ -91,35 +91,40 @@
             // 
             this.lblData.AutoSize = true;
             this.lblData.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblData.Location = new System.Drawing.Point(21, 46);
+            this.lblData.Location = new System.Drawing.Point(28, 57);
+            this.lblData.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(104, 18);
+            this.lblData.Size = new System.Drawing.Size(134, 24);
             this.lblData.TabIndex = 6;
             this.lblData.Text = "Data da Venda";
             // 
             // mskData
             // 
-            this.mskData.Location = new System.Drawing.Point(24, 67);
+            this.mskData.Location = new System.Drawing.Point(32, 82);
+            this.mskData.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mskData.Mask = "9999/99/99";
             this.mskData.Name = "mskData";
-            this.mskData.Size = new System.Drawing.Size(69, 20);
+            this.mskData.Size = new System.Drawing.Size(91, 22);
             this.mskData.TabIndex = 7;
             // 
             // ltbVenda
             // 
             this.ltbVenda.FormattingEnabled = true;
-            this.ltbVenda.Location = new System.Drawing.Point(192, 110);
+            this.ltbVenda.ItemHeight = 16;
+            this.ltbVenda.Location = new System.Drawing.Point(256, 135);
+            this.ltbVenda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ltbVenda.Name = "ltbVenda";
-            this.ltbVenda.Size = new System.Drawing.Size(283, 251);
+            this.ltbVenda.Size = new System.Drawing.Size(376, 308);
             this.ltbVenda.TabIndex = 8;
             // 
             // lblValor
             // 
             this.lblValor.AutoSize = true;
             this.lblValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValor.Location = new System.Drawing.Point(188, 87);
+            this.lblValor.Location = new System.Drawing.Point(251, 107);
+            this.lblValor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblValor.Name = "lblValor";
-            this.lblValor.Size = new System.Drawing.Size(50, 20);
+            this.lblValor.Size = new System.Drawing.Size(63, 25);
             this.lblValor.TabIndex = 9;
             this.lblValor.Text = "Valor ";
             // 
@@ -127,24 +132,27 @@
             // 
             this.lblTotalVenda.AutoSize = true;
             this.lblTotalVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalVenda.Location = new System.Drawing.Point(20, 140);
+            this.lblTotalVenda.Location = new System.Drawing.Point(27, 316);
+            this.lblTotalVenda.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotalVenda.Name = "lblTotalVenda";
-            this.lblTotalVenda.Size = new System.Drawing.Size(95, 20);
+            this.lblTotalVenda.Size = new System.Drawing.Size(119, 25);
             this.lblTotalVenda.TabIndex = 10;
             this.lblTotalVenda.Text = "Total Venda";
             // 
             // txtTotalVenda
             // 
-            this.txtTotalVenda.Location = new System.Drawing.Point(24, 163);
+            this.txtTotalVenda.Location = new System.Drawing.Point(32, 345);
+            this.txtTotalVenda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTotalVenda.Name = "txtTotalVenda";
-            this.txtTotalVenda.Size = new System.Drawing.Size(151, 20);
+            this.txtTotalVenda.Size = new System.Drawing.Size(200, 22);
             this.txtTotalVenda.TabIndex = 11;
             // 
             // btnPesquisa
             // 
-            this.btnPesquisa.Location = new System.Drawing.Point(373, 41);
+            this.btnPesquisa.Location = new System.Drawing.Point(497, 50);
+            this.btnPesquisa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPesquisa.Name = "btnPesquisa";
-            this.btnPesquisa.Size = new System.Drawing.Size(102, 30);
+            this.btnPesquisa.Size = new System.Drawing.Size(136, 37);
             this.btnPesquisa.TabIndex = 12;
             this.btnPesquisa.Text = "Pesquisa";
             this.btnPesquisa.UseVisualStyleBackColor = true;
@@ -152,10 +160,10 @@
             // 
             // frmVendas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(487, 373);
+            this.ClientSize = new System.Drawing.Size(649, 459);
             this.Controls.Add(this.btnPesquisa);
             this.Controls.Add(this.txtTotalVenda);
             this.Controls.Add(this.lblTotalVenda);
@@ -166,6 +174,7 @@
             this.Controls.Add(this.menuStrip1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmVendas";
             this.Text = "Vendas";
             this.menuStrip1.ResumeLayout(false);

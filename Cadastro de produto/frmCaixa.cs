@@ -15,8 +15,6 @@ namespace Cadastro_de_produto
     public partial class frmCaixa : Form
     {
 
-        public string Valor { get; set; }
-
         public frmCaixa()
         {
             InitializeComponent();
@@ -53,10 +51,10 @@ namespace Cadastro_de_produto
             comm.Parameters.Clear();
             comm.Parameters.Add("@valor",MySqlDbType.Decimal,18).Value = lblInvisibleTotal.Text;
             comm.Parameters.Add("@dataVenda",MySqlDbType.Date).Value = dtpDataVenda.Text;
-            comm.Parameters.Add("@quantidade", MySqlDbType.VarChar).Value = nudQuantidade.Value;
+            comm.Parameters.Add("@quantidade", MySqlDbType.VarChar,100).Value = nudQuantidade.Value;
 
             comm.Connection = Conexao.obterConexao();
-            comm.Parameters.Clear();
+
             int resp = comm.ExecuteNonQuery();
 
             Conexao.fecharConexao();
@@ -132,7 +130,11 @@ namespace Cadastro_de_produto
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            
+            double valorMultiplicador = Convert.ToInt32(nudQuantidade.Value);
+            double valorProduto = Convert.ToDouble(lblInvisiblepreco.Text);
+            double resultado = valorProduto * valorMultiplicador;
+
+            lblInvisibleTotal.Text = resultado.ToString();
         }
        
         private void btnConfirma_KeyDown(object sender, KeyEventArgs e)
@@ -145,11 +147,6 @@ namespace Cadastro_de_produto
 
         private void btnConfirma_Click_1(object sender, EventArgs e)
         {
-            double valorMultiplicador = Convert.ToInt32(nudQuantidade.Value);
-            double valorProduto = Convert.ToDouble(lblInvisiblepreco.Text);
-            double resultado = valorProduto * valorMultiplicador;
-
-            lblInvisibleTotal.Text = resultado.ToString();
 
             DialogResult resul = MessageBox.Show("Deseja confirmar a venda?",
             "Confirmação",
@@ -159,12 +156,10 @@ namespace Cadastro_de_produto
 
             if (resul == DialogResult.Yes)
             { 
+                MessageBox.Show("Venda confirmada com sucesso!",
+                    "Messagem de Sucesso");
                 valorVenda();
-
-                MessageBox.Show("Venda confirmada com sucesso!");
                 LimparCampos();
-
-                MessageBox.Show("Sucesso");
             }
             else
             {

@@ -23,7 +23,7 @@ namespace Cadastro_de_produto
         public void pesquisarPorData(string data)
         {
             MySqlCommand comm = new MySqlCommand();
-            comm.CommandText = "select nome,quantidade from tbVendas;";
+            comm.CommandText = "select valor,quantidade from tbVendas;";
             comm.CommandType = CommandType.Text;
 
             comm.Parameters.Clear();
@@ -35,7 +35,8 @@ namespace Cadastro_de_produto
 
             while (DR.Read())
             {
-                ltbVenda.Items.Add((DR.GetDecimal(0)));
+                string produto = $"{DR["quantidade"]} - {DR["valor"]}";
+                ltbVenda.Items.Add(produto);
             }
 
             Conexao.fecharConexao();
