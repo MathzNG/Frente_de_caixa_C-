@@ -17,17 +17,20 @@ namespace Cadastro_de_produto
         public frmVendas()
         {
             InitializeComponent();
-            
+
         }
 
         public void pesquisarPorData(string data)
         {
             MySqlCommand comm = new MySqlCommand();
-            comm.CommandText = "select valor,quantidade from tbVendas;";
+            comm.CommandText = "SELECT p.nome, v.valor, v.quantidade " +
+                   "FROM tbVendas AS v " +
+                   "INNER JOIN tbProdutos AS p ON v.codProd = p.codProd; ";
             comm.CommandType = CommandType.Text;
 
             comm.Parameters.Clear();
             comm.Parameters.Add("@dataVenda", MySqlDbType.Date).Value = data;
+
             comm.Connection = Conexao.obterConexao();
 
             MySqlDataReader DR;
@@ -35,14 +38,33 @@ namespace Cadastro_de_produto
 
             while (DR.Read())
             {
-                string produto = $"{DR["quantidade"]} - {DR["valor"]}";
+                string produto = $"{DR["nome"]} - {DR["quantidade"]} - {DR["valor"]}";
                 ltbVenda.Items.Add(produto);
             }
-
             Conexao.fecharConexao();
         }
 
-        
+        public void carregarProdutos()
+        {
+            MySqlCommand comm = new MySqlCommand();
+            comm.Connection = Conexao.obterConexao();
+            comm.CommandText = "SELECT p.nome, v.valor, v.quantidade " +
+                   "FROM tbVendas AS v " +
+                   "INNER JOIN tbProdutos AS p ON v.codProd = p.codProd;";
+            comm.CommandType = CommandType.Text;
+
+            MySqlDataReader da = comm.ExecuteReader();
+            DataTable dataTable = new DataTable();
+            dataTable.Load(da);
+
+            dgvVendas.DataSource = dataTable;
+        }
+
+        public void limparCampos()
+        {
+            mskData.Text = "";
+        }
+
 
         private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -74,12 +96,19 @@ namespace Cadastro_de_produto
 
         private void btnPesquisa_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrWhiteSpace(mskData.Text))
+            if (string.IsNullOrWhiteSpace(mskData.Text))
             {
                 MessageBox.Show("Digite a data da venda para pesquisar.");
+                limparCampos();
                 return;
             }
-            pesquisarPorData(mskData.Text);
+            else
+            {
+                pesquisarPorData(mskData.Text);
+                carregarProdutos();
+            }
+           
         }
+
     }
 }

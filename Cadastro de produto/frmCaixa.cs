@@ -37,21 +37,22 @@ namespace Cadastro_de_produto
             while (dr.Read())
             {
                 ltbProdutos.Items.Add(dr["nome"].ToString());
-                
             }
             Conexao.fecharConexao();
         }
+
         public int valorVenda()
         {
             MySqlCommand comm = new MySqlCommand();
 
-            comm.CommandText = "insert into tbVendas(valor,dataVenda,quantidade)values(@valor,@dataVenda,@quantidade);";
+            comm.CommandText = "insert into tbVendas(valor,dataVenda,quantidade,codProd)values(@valor,@dataVenda,@quantidade,@codProd);";
             comm.CommandType = CommandType.Text;
 
             comm.Parameters.Clear();
-            comm.Parameters.Add("@valor",MySqlDbType.Decimal,18).Value = lblInvisibleTotal.Text;
-            comm.Parameters.Add("@dataVenda",MySqlDbType.Date).Value = dtpDataVenda.Text;
-            comm.Parameters.Add("@quantidade", MySqlDbType.VarChar,100).Value = nudQuantidade.Value;
+            comm.Parameters.Add("@valor", MySqlDbType.Decimal, 18).Value = lblInvisibleTotal.Text;
+            comm.Parameters.Add("@dataVenda", MySqlDbType.Date).Value = dtpDataVenda.Value;
+            comm.Parameters.Add("@quantidade", MySqlDbType.VarChar, 100).Value = nudQuantidade.Value;
+            comm.Parameters.Add("@codProd", MySqlDbType.Int32).Value = cbbProduto.Text;
 
             comm.Connection = Conexao.obterConexao();
 
@@ -65,7 +66,7 @@ namespace Cadastro_de_produto
         public void valorProduto(string nome)
         {
             MySqlCommand comm = new MySqlCommand();
-            comm.CommandText = "select preco from tbProdutos where nome = @nome;";
+            comm.CommandText = "select preco,codProd from tbProdutos where nome = @nome;";
             comm.CommandType = CommandType.Text;
 
             comm.Parameters.Clear();
@@ -77,6 +78,7 @@ namespace Cadastro_de_produto
             Dr.Read();
 
             lblInvisiblepreco.Text = Dr["preco"].ToString();
+            cbbProduto.Text = Dr["codProd"].ToString();
 
             Conexao.fecharConexao();
 
@@ -104,6 +106,9 @@ namespace Cadastro_de_produto
             btnConfirma.BackColor = Color.Transparent;
             btnConfirma.Parent = pctFundo;
 
+            lblProduto.BackColor = Color.Transparent;
+            lblProduto.Parent = pctFundo;
+
         }
 
         private void frmCaixa_Load(object sender, EventArgs e)
@@ -124,7 +129,6 @@ namespace Cadastro_de_produto
             {
                 string itemSelecionado = ltbProdutos.SelectedItem.ToString();
                 valorProduto(itemSelecionado);
-               
             }
         }
 
@@ -136,7 +140,7 @@ namespace Cadastro_de_produto
 
             lblInvisibleTotal.Text = resultado.ToString();
         }
-       
+
         private void btnConfirma_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -155,7 +159,7 @@ namespace Cadastro_de_produto
             MessageBoxDefaultButton.Button2);
 
             if (resul == DialogResult.Yes)
-            { 
+            {
                 MessageBox.Show("Venda confirmada com sucesso!",
                     "Messagem de Sucesso");
                 valorVenda();
@@ -174,6 +178,11 @@ namespace Cadastro_de_produto
             {
                 btnConfirma.Focus();
             }
+        }
+
+        private void cbbProduto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
