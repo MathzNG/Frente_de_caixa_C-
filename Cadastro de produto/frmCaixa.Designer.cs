@@ -41,12 +41,12 @@
             this.pctFundo = new System.Windows.Forms.PictureBox();
             this.lblNada = new System.Windows.Forms.Label();
             this.dtpDataVenda = new System.Windows.Forms.DateTimePicker();
-            this.cbbCodigo = new System.Windows.Forms.ComboBox();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.dgvProduto = new System.Windows.Forms.DataGridView();
             this.btnFinalizar = new System.Windows.Forms.Button();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantidade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctFundo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).BeginInit();
@@ -185,16 +185,6 @@
             this.dtpDataVenda.TabIndex = 14;
             this.dtpDataVenda.Value = new System.DateTime(2025, 4, 27, 0, 0, 0, 0);
             // 
-            // cbbCodigo
-            // 
-            this.cbbCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbCodigo.FormattingEnabled = true;
-            this.cbbCodigo.Location = new System.Drawing.Point(12, 86);
-            this.cbbCodigo.Margin = new System.Windows.Forms.Padding(2);
-            this.cbbCodigo.Name = "cbbCodigo";
-            this.cbbCodigo.Size = new System.Drawing.Size(91, 25);
-            this.cbbCodigo.TabIndex = 15;
-            // 
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
@@ -249,17 +239,24 @@
             this.btnFinalizar.UseVisualStyleBackColor = true;
             this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Location = new System.Drawing.Point(12, 86);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(93, 20);
+            this.txtCodigo.TabIndex = 21;
+            // 
             // frmCaixa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(824, 513);
+            this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.dgvProduto);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.lblCodigo);
-            this.Controls.Add(this.cbbCodigo);
             this.Controls.Add(this.dtpDataVenda);
             this.Controls.Add(this.lblNada);
             this.Controls.Add(this.btnAdicionar);
@@ -298,11 +295,11 @@
         private System.Windows.Forms.PictureBox pctFundo;
         private System.Windows.Forms.Label lblNada;
         private System.Windows.Forms.DateTimePicker dtpDataVenda;
-        private System.Windows.Forms.ComboBox cbbCodigo;
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.DataGridView dgvProduto;
         private System.Windows.Forms.Button btnFinalizar;
+        private System.Windows.Forms.TextBox txtCodigo;
     }
 }

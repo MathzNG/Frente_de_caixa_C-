@@ -22,7 +22,7 @@ namespace Cadastro_de_produto
         }
         public void LimparCampos()
         {
-            cbbCodigo.Text = "";
+            txtCodigo.Text = "";
             txtNome.Text = "";
             lblInvisiblepreco.Text = "";
             lblInvisibleTotal.Text = "";
@@ -94,7 +94,7 @@ namespace Cadastro_de_produto
             Dr.Read();
 
             lblInvisiblepreco.Text = Dr["preco"].ToString();
-            cbbCodigo.Text = Dr["codProd"].ToString();
+            txtCodigo.Text = Dr["codProd"].ToString();
             txtNome.Text = Dr["nome"].ToString();
 
 
@@ -104,7 +104,7 @@ namespace Cadastro_de_produto
 
         public void adicionarProduto()
         {
-            dgvProduto.Rows.Add(cbbCodigo.Text, txtNome.Text, lblInvisiblepreco.Text, nudQuantidade.Value.ToString(), lblInvisibleTotal.Text);
+            dgvProduto.Rows.Add(txtCodigo.Text, txtNome.Text, lblInvisiblepreco.Text, nudQuantidade.Value.ToString(), lblInvisibleTotal.Text);
         }
         public void FundoTransparente()
         {
