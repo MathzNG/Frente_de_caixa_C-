@@ -8,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using Mysqlx.Resultset;
+
 
 
 namespace Cadastro_de_produto
 {
     public partial class frmCaixa : Form
     {
-
         public frmCaixa()
         {
             InitializeComponent();
@@ -27,6 +26,9 @@ namespace Cadastro_de_produto
             txtNome.Text = "";
             lblInvisiblepreco.Text = "";
             lblInvisibleTotal.Text = "";
+            nudQuantidade.ValueChanged -= nudQuantidade_ValueChanged;
+            nudQuantidade.Value = 0;
+            nudQuantidade.ValueChanged += nudQuantidade_ValueChanged;
         }
         public void produtosLista()
         {
@@ -46,24 +48,35 @@ namespace Cadastro_de_produto
 
         public int valorVenda()
         {
-            MySqlCommand comm = new MySqlCommand();
+            int valor = 0;
+            
+            foreach (DataGridViewRow row in dgvProduto.Rows)
+            {
+                if (row.IsNewRow) continue;
 
-            comm.CommandText = "insert into tbVendas(valor,dataVenda,quantidade,codProd)values(@valor,@dataVenda,@quantidade,@codProd);";
-            comm.CommandType = CommandType.Text;
+                int id = Convert.ToInt32(row.Cells["Código"].Value);
+                int quantidade = Convert.ToInt32(row.Cells["Quantidade"].Value);
+                double preco = Convert.ToDouble(row.Cells["Valor Total"].Value);
 
-            comm.Parameters.Clear();
-            comm.Parameters.Add("@valor", MySqlDbType.Decimal, 18).Value = lblInvisibleTotal.Text;
-            comm.Parameters.Add("@dataVenda", MySqlDbType.Date).Value = dtpDataVenda.Value;
-            comm.Parameters.Add("@quantidade", MySqlDbType.VarChar, 100).Value = nudQuantidade.Value;
-            comm.Parameters.Add("@codProd", MySqlDbType.Int32).Value = cbbCodigo.Text;
+                MySqlCommand comm = new MySqlCommand();
+                comm.CommandText = "insert into tbVendas(codProd,dataVenda,quantidade,valor) values(@codProd,@dataVenda,@quantidade,@valor);";
+                comm.CommandType = CommandType.Text;
 
-            comm.Connection = Conexao.obterConexao();
+                comm.Parameters.Clear();
+                comm.Parameters.Add("@codProd", MySqlDbType.Int32).Value = id;
+                comm.Parameters.Add("@quantidade", MySqlDbType.Int32).Value = quantidade;
+                comm.Parameters.Add("@valor", MySqlDbType.Decimal,18).Value = preco;
+                comm.Parameters.Add("@dataVenda", MySqlDbType.Date).Value = dtpDataVenda.Value;
 
-            int resp = comm.ExecuteNonQuery();
+                comm.Connection = Conexao.obterConexao();
 
-            Conexao.fecharConexao();
+                valor += comm.ExecuteNonQuery();
 
-            return resp;
+                Conexao.fecharConexao();
+
+               
+            }
+            return valor;
         }
 
         public void valorProduto(string nome)
@@ -91,10 +104,7 @@ namespace Cadastro_de_produto
 
         public void adicionarProduto()
         {
-           
-
             dgvProduto.Rows.Add(cbbCodigo.Text, txtNome.Text, lblInvisiblepreco.Text, nudQuantidade.Value.ToString(), lblInvisibleTotal.Text);
-
         }
         public void FundoTransparente()
         {
@@ -122,8 +132,8 @@ namespace Cadastro_de_produto
             btnVoltar.BackColor = Color.Transparent;
             btnVoltar.Parent = pctFundo;
 
-            btnConfirma.BackColor = Color.Transparent;
-            btnConfirma.Parent = pctFundo;
+            btnAdicionar.BackColor = Color.Transparent;
+            btnAdicionar.Parent = pctFundo;
 
             btnFinalizar.BackColor = Color.Transparent;
             btnFinalizar.Parent = pctFundo;
@@ -138,7 +148,7 @@ namespace Cadastro_de_produto
             dgvProduto.Columns.Add(lblNome.Text, "Nome");
             dgvProduto.Columns.Add(lblPreco.Text, "Preço");
             dgvProduto.Columns.Add(lblQuantidade.Text, "Quantidade");
-            dgvProduto.Columns.Add(lblValorTotal.Text, "Valor Total");
+            dgvProduto.Columns.Add("Valor Total", "Valor Total");
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)

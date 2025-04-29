@@ -37,7 +37,7 @@
             this.nudQuantidade = new System.Windows.Forms.NumericUpDown();
             this.lblInvisiblepreco = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
-            this.btnConfirma = new System.Windows.Forms.Button();
+            this.btnAdicionar = new System.Windows.Forms.Button();
             this.pctFundo = new System.Windows.Forms.PictureBox();
             this.lblNada = new System.Windows.Forms.Label();
             this.dtpDataVenda = new System.Windows.Forms.DateTimePicker();
@@ -140,20 +140,20 @@
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
-            // btnConfirma
+            // btnAdicionar
             // 
-            this.btnConfirma.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnConfirma.FlatAppearance.BorderSize = 0;
-            this.btnConfirma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirma.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirma.Location = new System.Drawing.Point(691, 327);
-            this.btnConfirma.Name = "btnConfirma";
-            this.btnConfirma.Size = new System.Drawing.Size(121, 52);
-            this.btnConfirma.TabIndex = 12;
-            this.btnConfirma.Text = "Confirma";
-            this.btnConfirma.UseVisualStyleBackColor = true;
-            this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click_1);
-            this.btnConfirma.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnConfirma_KeyDown);
+            this.btnAdicionar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdicionar.FlatAppearance.BorderSize = 0;
+            this.btnAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdicionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdicionar.Location = new System.Drawing.Point(691, 327);
+            this.btnAdicionar.Name = "btnAdicionar";
+            this.btnAdicionar.Size = new System.Drawing.Size(121, 52);
+            this.btnAdicionar.TabIndex = 12;
+            this.btnAdicionar.Text = "Adicionar";
+            this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnConfirma_Click_1);
+            this.btnAdicionar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnConfirma_KeyDown);
             // 
             // pctFundo
             // 
@@ -262,7 +262,7 @@
             this.Controls.Add(this.cbbCodigo);
             this.Controls.Add(this.dtpDataVenda);
             this.Controls.Add(this.lblNada);
-            this.Controls.Add(this.btnConfirma);
+            this.Controls.Add(this.btnAdicionar);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.lblInvisiblepreco);
             this.Controls.Add(this.nudQuantidade);
@@ -294,7 +294,7 @@
         private System.Windows.Forms.NumericUpDown nudQuantidade;
         private System.Windows.Forms.Label lblInvisiblepreco;
         private System.Windows.Forms.Button btnVoltar;
-        private System.Windows.Forms.Button btnConfirma;
+        private System.Windows.Forms.Button btnAdicionar;
         private System.Windows.Forms.PictureBox pctFundo;
         private System.Windows.Forms.Label lblNada;
         private System.Windows.Forms.DateTimePicker dtpDataVenda;
