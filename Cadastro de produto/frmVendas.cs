@@ -48,7 +48,7 @@ namespace Cadastro_de_produto
         {
             MySqlCommand comm = new MySqlCommand();
             comm.Connection = Conexao.obterConexao();
-            comm.CommandText = "SELECT p.codProd AS 'Código',p.preco AS 'Preço', p.nome AS 'Nome', v.quantidade AS 'Quantidade',v.valor AS 'Valor Total' " +
+            comm.CommandText = @"SELECT p.codProd AS 'Código',p.preco AS 'Preço', p.nome AS 'Nome', v.quantidade AS 'Quantidade',v.valor AS 'Valor Total' " +
                    "FROM tbVendas AS v " +
                    "INNER JOIN tbProdutos AS p ON v.codProd = p.codProd;";
             comm.CommandType = CommandType.Text;
@@ -107,29 +107,31 @@ namespace Cadastro_de_produto
                 mskData.Focus();
                 return;
             }
+
             else
             {
-                pesquisarPorData(mskData.Text);
                 carregarProdutos();
+
+                double total = 0;
+
+                foreach (DataGridViewRow row in dgvVendas.Rows)
+                {
+                    if (row.IsNewRow) continue;
+
+
+                    if (row.Cells["Valor Total"].Value != null)
+                    {
+                        total += Convert.ToDouble(row.Cells["Valor Total"].Value);
+                    }
+                }
+                txtTotalVenda.Text = "R$" + total.ToString("F2");
             }
            
         }
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
-            double total = 0;
-
-            foreach (DataGridViewRow row in dgvVendas.Rows)
-            {
-                if (row.IsNewRow) continue;
-
-
-                if (row.Cells["Valor Total"].Value != null)
-                {
-                    total += Convert.ToDouble(row.Cells["Valor Total"].Value);
-                }
-            }
-            txtTotalVenda.Text = "R$" + total.ToString("F2");
+            
         }
     }
 }

@@ -39,7 +39,6 @@
             this.txtTotalVenda = new System.Windows.Forms.TextBox();
             this.btnPesquisa = new System.Windows.Forms.Button();
             this.dgvVendas = new System.Windows.Forms.DataGridView();
-            this.btnCalcular = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendas)).BeginInit();
             this.SuspendLayout();
@@ -126,9 +125,9 @@
             // 
             // btnPesquisa
             // 
-            this.btnPesquisa.Location = new System.Drawing.Point(310, 27);
+            this.btnPesquisa.Location = new System.Drawing.Point(393, 27);
             this.btnPesquisa.Name = "btnPesquisa";
-            this.btnPesquisa.Size = new System.Drawing.Size(114, 44);
+            this.btnPesquisa.Size = new System.Drawing.Size(151, 44);
             this.btnPesquisa.TabIndex = 12;
             this.btnPesquisa.Text = "Pesquisa";
             this.btnPesquisa.UseVisualStyleBackColor = true;
@@ -136,25 +135,19 @@
             // 
             // dgvVendas
             // 
+            this.dgvVendas.AllowUserToAddRows = false;
+            this.dgvVendas.AllowUserToDeleteRows = false;
+            this.dgvVendas.AllowUserToResizeColumns = false;
+            this.dgvVendas.AllowUserToResizeRows = false;
             this.dgvVendas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvVendas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVendas.Location = new System.Drawing.Point(0, 156);
-            this.dgvVendas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvVendas.Margin = new System.Windows.Forms.Padding(2);
             this.dgvVendas.Name = "dgvVendas";
             this.dgvVendas.RowHeadersWidth = 51;
             this.dgvVendas.RowTemplate.Height = 24;
             this.dgvVendas.Size = new System.Drawing.Size(556, 152);
             this.dgvVendas.TabIndex = 13;
-            // 
-            // btnCalcular
-            // 
-            this.btnCalcular.Location = new System.Drawing.Point(430, 27);
-            this.btnCalcular.Name = "btnCalcular";
-            this.btnCalcular.Size = new System.Drawing.Size(114, 44);
-            this.btnCalcular.TabIndex = 14;
-            this.btnCalcular.Text = "Calcular";
-            this.btnCalcular.UseVisualStyleBackColor = true;
-            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
             // 
             // frmVendas
             // 
@@ -162,7 +155,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(556, 308);
-            this.Controls.Add(this.btnCalcular);
             this.Controls.Add(this.dgvVendas);
             this.Controls.Add(this.btnPesquisa);
             this.Controls.Add(this.txtTotalVenda);
@@ -194,6 +186,5 @@
         private System.Windows.Forms.TextBox txtTotalVenda;
         private System.Windows.Forms.Button btnPesquisa;
         private System.Windows.Forms.DataGridView dgvVendas;
-        private System.Windows.Forms.Button btnCalcular;
     }
 }
