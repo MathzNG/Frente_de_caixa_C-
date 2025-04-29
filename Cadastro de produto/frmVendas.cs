@@ -39,7 +39,7 @@ namespace Cadastro_de_produto
             while (DR.Read())
             {
                 string produto = $"{DR["nome"]} - {DR["quantidade"]} - {DR["valor"]}";
-                ltbVenda.Items.Add(produto);
+               
             }
             Conexao.fecharConexao();
         }
@@ -48,7 +48,7 @@ namespace Cadastro_de_produto
         {
             MySqlCommand comm = new MySqlCommand();
             comm.Connection = Conexao.obterConexao();
-            comm.CommandText = "SELECT p.nome, v.valor, v.quantidade " +
+            comm.CommandText = "SELECT p.codProd AS 'Código',p.preco AS 'Preço', p.nome AS 'Nome', v.quantidade AS 'Quantidade',v.valor AS 'Valor Total' " +
                    "FROM tbVendas AS v " +
                    "INNER JOIN tbProdutos AS p ON v.codProd = p.codProd;";
             comm.CommandType = CommandType.Text;
@@ -87,7 +87,7 @@ namespace Cadastro_de_produto
             this.Hide();
         }
 
-        private void caixaToolStripMenuItem_Click(object sender, EventArgs e)
+         private void caixaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmCaixa abrir = new frmCaixa();
             abrir.Show();
@@ -96,10 +96,15 @@ namespace Cadastro_de_produto
 
         private void btnPesquisa_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(mskData.Text))
+            if (!mskData.MaskCompleted)
             {
-                MessageBox.Show("Digite a data da venda para pesquisar.");
+                MessageBox.Show("Digite a data da venda para pesquisar.",
+                    "Messagem do Sistema",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error,
+                    MessageBoxDefaultButton.Button1);
                 limparCampos();
+                mskData.Focus();
                 return;
             }
             else
@@ -110,5 +115,21 @@ namespace Cadastro_de_produto
            
         }
 
+        private void btnCalcular_Click(object sender, EventArgs e)
+        {
+            double total = 0;
+
+            foreach (DataGridViewRow row in dgvVendas.Rows)
+            {
+                if (row.IsNewRow) continue;
+
+
+                if (row.Cells["Valor Total"].Value != null)
+                {
+                    total += Convert.ToDouble(row.Cells["Valor Total"].Value);
+                }
+            }
+            txtTotalVenda.Text = "R$" + total.ToString("F2");
+        }
     }
 }
