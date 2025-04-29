@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Mysqlx.Resultset;
 
 
 namespace Cadastro_de_produto
@@ -22,6 +23,8 @@ namespace Cadastro_de_produto
         }
         public void LimparCampos()
         {
+            cbbCodigo.Text = "";
+            txtNome.Text = "";
             lblInvisiblepreco.Text = "";
             lblInvisibleTotal.Text = "";
         }
@@ -52,7 +55,7 @@ namespace Cadastro_de_produto
             comm.Parameters.Add("@valor", MySqlDbType.Decimal, 18).Value = lblInvisibleTotal.Text;
             comm.Parameters.Add("@dataVenda", MySqlDbType.Date).Value = dtpDataVenda.Value;
             comm.Parameters.Add("@quantidade", MySqlDbType.VarChar, 100).Value = nudQuantidade.Value;
-            comm.Parameters.Add("@codProd", MySqlDbType.Int32).Value = cbbProduto.Text;
+            comm.Parameters.Add("@codProd", MySqlDbType.Int32).Value = cbbCodigo.Text;
 
             comm.Connection = Conexao.obterConexao();
 
@@ -66,7 +69,7 @@ namespace Cadastro_de_produto
         public void valorProduto(string nome)
         {
             MySqlCommand comm = new MySqlCommand();
-            comm.CommandText = "select preco,codProd from tbProdutos where nome = @nome;";
+            comm.CommandText = "select preco,codProd,nome from tbProdutos where nome = @nome;";
             comm.CommandType = CommandType.Text;
 
             comm.Parameters.Clear();
@@ -78,9 +81,19 @@ namespace Cadastro_de_produto
             Dr.Read();
 
             lblInvisiblepreco.Text = Dr["preco"].ToString();
-            cbbProduto.Text = Dr["codProd"].ToString();
+            cbbCodigo.Text = Dr["codProd"].ToString();
+            txtNome.Text = Dr["nome"].ToString();
+
 
             Conexao.fecharConexao();
+
+        }
+
+        public void adicionarProduto()
+        {
+           
+
+            dgvProduto.Rows.Add(cbbCodigo.Text, txtNome.Text, lblInvisiblepreco.Text, nudQuantidade.Value.ToString(), lblInvisibleTotal.Text);
 
         }
         public void FundoTransparente()
@@ -100,20 +113,32 @@ namespace Cadastro_de_produto
             lblInvisibleTotal.BackColor = Color.Transparent;
             lblInvisibleTotal.Parent = pctFundo;
 
+            lblCodigo.BackColor = Color.Transparent;
+            lblCodigo.Parent = pctFundo;
+
+            lblNome.BackColor = Color.Transparent;
+            lblNome.Parent = pctFundo;
+
             btnVoltar.BackColor = Color.Transparent;
             btnVoltar.Parent = pctFundo;
 
             btnConfirma.BackColor = Color.Transparent;
             btnConfirma.Parent = pctFundo;
 
-            lblProduto.BackColor = Color.Transparent;
-            lblProduto.Parent = pctFundo;
+            btnFinalizar.BackColor = Color.Transparent;
+            btnFinalizar.Parent = pctFundo;
 
         }
 
         private void frmCaixa_Load(object sender, EventArgs e)
         {
             FundoTransparente();
+
+            dgvProduto.Columns.Add(lblCodigo.Text, "Código");
+            dgvProduto.Columns.Add(lblNome.Text, "Nome");
+            dgvProduto.Columns.Add(lblPreco.Text, "Preço");
+            dgvProduto.Columns.Add(lblQuantidade.Text, "Quantidade");
+            dgvProduto.Columns.Add(lblValorTotal.Text, "Valor Total");
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -132,15 +157,6 @@ namespace Cadastro_de_produto
             }
         }
 
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-            double valorMultiplicador = Convert.ToInt32(nudQuantidade.Value);
-            double valorProduto = Convert.ToDouble(lblInvisiblepreco.Text);
-            double resultado = valorProduto * valorMultiplicador;
-
-            lblInvisibleTotal.Text = resultado.ToString();
-        }
-
         private void btnConfirma_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -151,7 +167,13 @@ namespace Cadastro_de_produto
 
         private void btnConfirma_Click_1(object sender, EventArgs e)
         {
+            adicionarProduto();
+            LimparCampos();
+        }
 
+
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
             DialogResult resul = MessageBox.Show("Deseja confirmar a venda?",
             "Confirmação",
             MessageBoxButtons.YesNo,
@@ -172,17 +194,13 @@ namespace Cadastro_de_produto
             }
         }
 
-        private void numericUpDown1_KeyDown(object sender, KeyEventArgs e)
+        private void nudQuantidade_ValueChanged(object sender, EventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                btnConfirma.Focus();
-            }
-        }
+            double preco = Convert.ToDouble(lblInvisiblepreco.Text);
+            int quantidade = Convert.ToInt32(nudQuantidade.Value);
+            double total = preco * quantidade;
 
-        private void cbbProduto_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            lblInvisibleTotal.Text = total.ToString("F2");
         }
     }
 }
