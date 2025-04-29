@@ -177,6 +177,30 @@ namespace Cadastro_de_produto
 
         private void btnConfirma_Click_1(object sender, EventArgs e)
         {
+            if (ltbProdutos.SelectedItem != null)
+            {
+                string itemSelecionado = ltbProdutos.SelectedItem.ToString();
+                valorProduto(itemSelecionado);
+            }
+            else
+            {
+                MessageBox.Show("Selecione um produto da lista.",
+                     "Messagem do Sistema",
+                     MessageBoxButtons.OK,
+                     MessageBoxIcon.Error,
+                     MessageBoxDefaultButton.Button1);
+                return;
+            }
+            if (nudQuantidade.Value == 0)
+            {
+                MessageBox.Show("Selecione uma quantidade.",
+                    "Messagem do Sistema",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error,
+                    MessageBoxDefaultButton.Button1);
+                return;
+            }
+
             adicionarProduto();
             LimparCampos();
         }
