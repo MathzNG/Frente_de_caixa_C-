@@ -145,6 +145,7 @@
             this.mspCaixa.Name = "mspCaixa";
             this.mspCaixa.Size = new System.Drawing.Size(48, 20);
             this.mspCaixa.Text = "Caixa";
+            this.mspCaixa.Click += new System.EventHandler(this.mspCaixa_Click);
             // 
             // mspVendas
             // 

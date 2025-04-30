@@ -241,5 +241,12 @@ namespace Cadastro_de_produto
             abrir .Show();
             this.Hide();
         }
+
+        private void mspCaixa_Click(object sender, EventArgs e)
+        {
+            frmCaixa abrir = new frmCaixa();
+            abrir.Show();
+            this.Hide();
+        }
     }
 }
