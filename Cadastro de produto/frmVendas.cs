@@ -39,7 +39,7 @@ namespace Cadastro_de_produto
             while (DR.Read())
             {
                 string produto = $"{DR["nome"]} - {DR["quantidade"]} - {DR["valor"]}";
-               
+
             }
             Conexao.fecharConexao();
         }
@@ -50,14 +50,22 @@ namespace Cadastro_de_produto
             comm.Connection = Conexao.obterConexao();
             comm.CommandText = @"SELECT p.codProd AS 'Código',p.preco AS 'Preço', p.nome AS 'Nome', v.quantidade AS 'Quantidade',v.valor AS 'Valor Total' " +
                    "FROM tbVendas AS v " +
-                   "INNER JOIN tbProdutos AS p ON v.codProd = p.codProd;";
+                   "INNER JOIN tbProdutos AS p ON v.codProd = p.codProd where v.dataVenda = @dataVenda;";
             comm.CommandType = CommandType.Text;
 
-            MySqlDataReader da = comm.ExecuteReader();
+            comm.Parameters.Clear();
+            DateTime dataFormatada = DateTime.ParseExact(mskData.Text, "dd/MM/yyyy", null);
+            comm.Parameters.Add("@dataVenda", MySqlDbType.Date).Value = dataFormatada;
+           
+            MySqlDataAdapter da = new MySqlDataAdapter(comm);
+
             DataTable dataTable = new DataTable();
-            dataTable.Load(da);
+
+            da.Fill(dataTable);
 
             dgvVendas.DataSource = dataTable;
+
+            Conexao.fecharConexao();
         }
 
         public void limparCampos()
@@ -87,7 +95,7 @@ namespace Cadastro_de_produto
             this.Hide();
         }
 
-         private void caixaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void caixaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmCaixa abrir = new frmCaixa();
             abrir.Show();
@@ -96,6 +104,7 @@ namespace Cadastro_de_produto
 
         private void btnPesquisa_Click(object sender, EventArgs e)
         {
+
             if (!mskData.MaskCompleted)
             {
                 MessageBox.Show("Digite a data da venda para pesquisar.",
@@ -126,12 +135,6 @@ namespace Cadastro_de_produto
                 }
                 txtTotalVenda.Text = "R$" + total.ToString("F2");
             }
-           
-        }
-
-        private void btnCalcular_Click(object sender, EventArgs e)
-        {
-            
         }
     }
 }

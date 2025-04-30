@@ -66,7 +66,7 @@ namespace Cadastro_de_produto
                 comm.Parameters.Add("@codProd", MySqlDbType.Int32).Value = id;
                 comm.Parameters.Add("@quantidade", MySqlDbType.Int32).Value = quantidade;
                 comm.Parameters.Add("@valor", MySqlDbType.Decimal,18).Value = preco;
-                comm.Parameters.Add("@dataVenda", MySqlDbType.Date).Value = dtpDataVenda.Value;
+                comm.Parameters.Add("@dataVenda", MySqlDbType.Date).Value = DateTime.Now;
 
                 comm.Connection = Conexao.obterConexao();
 

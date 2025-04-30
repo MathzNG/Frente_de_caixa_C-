@@ -87,6 +87,7 @@
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.ltbPesquisar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "frmAtualizarProdutos";
             this.Text = "Pesquisar Produtos";
             this.ResumeLayout(false);
