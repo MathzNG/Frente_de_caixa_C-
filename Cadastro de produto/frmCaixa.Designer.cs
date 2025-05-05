@@ -203,7 +203,6 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(216, 29);
             this.txtNome.TabIndex = 18;
-            this.txtNome.Visible = false;
             // 
             // dgvProduto
             // 
@@ -240,7 +239,6 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(93, 29);
             this.txtCodigo.TabIndex = 21;
-            this.txtCodigo.Visible = false;
             // 
             // pctFundo
             // 
@@ -275,6 +273,7 @@
             this.Controls.Add(this.lblPreco);
             this.Controls.Add(this.pctFundo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmCaixa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

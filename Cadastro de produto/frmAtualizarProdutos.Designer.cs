@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAtualizarProdutos));
             this.ltbPesquisar = new System.Windows.Forms.ListBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
@@ -87,6 +88,7 @@
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.ltbPesquisar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmAtualizarProdutos";
             this.Text = "Pesquisar Produtos";

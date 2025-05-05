@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,14 +19,27 @@ namespace Cadastro_de_produto
         public frmCadastro()
         {
             InitializeComponent();
-            
-
+            desabilitarCampos();
+        }
+        public void desabilitarCampos()
+        {
+            btnAlterar.Enabled = false;
+            btnExcluir.Enabled = false;
+            txtNome.Focus();
+        }
+        public void habilitarCampos()
+        {
+            btnAdicionar.Enabled = false;
+            btnAlterar.Enabled = true;
+            btnExcluir.Enabled = true;
+            txtNome.Focus();
         }
         public frmCadastro(string produto)
         {
             InitializeComponent();
             txtNome.Text = produto;
-           valorProduto(txtNome.Text);
+            valorProduto(txtNome.Text);
+            habilitarCampos();
         }
 
         public int CadastroProdutos()
@@ -70,7 +84,7 @@ namespace Cadastro_de_produto
             Conexao.fecharConexao();
 
         }
-      
+
 
         private void LimparCampos()
         {
@@ -83,7 +97,7 @@ namespace Cadastro_de_produto
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            if (txtNome.Text == "" || nudPreco.Value == 0 )
+            if (txtNome.Text == "" || nudPreco.Value == 0)
             {
                 MessageBox.Show("Preencha todos os campos!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 LimparCampos();
@@ -96,7 +110,7 @@ namespace Cadastro_de_produto
 
             }
 
-            
+
         }
 
         private void mspMenuprincipal_Click(object sender, EventArgs e)
@@ -115,10 +129,10 @@ namespace Cadastro_de_produto
 
         private void frmCadastro_Load(object sender, EventArgs e)
         {
-            
+
         }
 
-        
+
         public void ValorProduto(string nome)
         {
             MySqlCommand comm = new MySqlCommand();
@@ -231,14 +245,14 @@ namespace Cadastro_de_produto
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             frmAtualizarProdutos abrir = new frmAtualizarProdutos();
-            abrir.Show();
+            abrir.ShowDialog();
             this.Hide();
         }
 
         private void mspVendas_Click(object sender, EventArgs e)
         {
             frmVendas abrir = new frmVendas();
-            abrir .Show();
+            abrir.Show();
             this.Hide();
         }
 
