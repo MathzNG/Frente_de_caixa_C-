@@ -99,7 +99,7 @@
             this.ltbProdutos.Location = new System.Drawing.Point(926, 9);
             this.ltbProdutos.Name = "ltbProdutos";
             this.ltbProdutos.Size = new System.Drawing.Size(722, 604);
-            this.ltbProdutos.TabIndex = 4;
+            this.ltbProdutos.TabIndex = 0;
             this.ltbProdutos.SelectedIndexChanged += new System.EventHandler(this.ltbProdutos_SelectedIndexChanged);
             // 
             // lblInvisibleTotal
@@ -122,7 +122,7 @@
             this.nudQuantidade.Location = new System.Drawing.Point(64, 447);
             this.nudQuantidade.Name = "nudQuantidade";
             this.nudQuantidade.Size = new System.Drawing.Size(135, 29);
-            this.nudQuantidade.TabIndex = 6;
+            this.nudQuantidade.TabIndex = 4;
             this.nudQuantidade.ValueChanged += new System.EventHandler(this.nudQuantidade_ValueChanged);
             // 
             // lblInvisiblepreco
@@ -135,7 +135,7 @@
             this.lblInvisiblepreco.Location = new System.Drawing.Point(176, 291);
             this.lblInvisiblepreco.Name = "lblInvisiblepreco";
             this.lblInvisiblepreco.Size = new System.Drawing.Size(0, 42);
-            this.lblInvisiblepreco.TabIndex = 7;
+            this.lblInvisiblepreco.TabIndex = 3;
             // 
             // btnVoltar
             // 
@@ -146,7 +146,7 @@
             this.btnVoltar.Location = new System.Drawing.Point(1366, 970);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(187, 52);
-            this.btnVoltar.TabIndex = 8;
+            this.btnVoltar.TabIndex = 9;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
@@ -160,7 +160,7 @@
             this.btnAdicionar.Location = new System.Drawing.Point(1366, 805);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(187, 52);
-            this.btnAdicionar.TabIndex = 12;
+            this.btnAdicionar.TabIndex = 7;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
             this.btnAdicionar.Click += new System.EventHandler(this.btnConfirma_Click_1);
@@ -202,7 +202,7 @@
             this.txtNome.Location = new System.Drawing.Point(49, 216);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(216, 29);
-            this.txtNome.TabIndex = 18;
+            this.txtNome.TabIndex = 2;
             // 
             // dgvProduto
             // 
@@ -216,7 +216,7 @@
             this.dgvProduto.Name = "dgvProduto";
             this.dgvProduto.ReadOnly = true;
             this.dgvProduto.Size = new System.Drawing.Size(1240, 231);
-            this.dgvProduto.TabIndex = 19;
+            this.dgvProduto.TabIndex = 6;
             // 
             // btnFinalizar
             // 
@@ -227,7 +227,7 @@
             this.btnFinalizar.Location = new System.Drawing.Point(1366, 889);
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.Size = new System.Drawing.Size(187, 52);
-            this.btnFinalizar.TabIndex = 20;
+            this.btnFinalizar.TabIndex = 8;
             this.btnFinalizar.Text = "Finalizar";
             this.btnFinalizar.UseVisualStyleBackColor = true;
             this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
@@ -241,7 +241,7 @@
             this.txtCodigo.Location = new System.Drawing.Point(49, 90);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(93, 29);
-            this.txtCodigo.TabIndex = 21;
+            this.txtCodigo.TabIndex = 1;
             // 
             // pctFundo
             // 

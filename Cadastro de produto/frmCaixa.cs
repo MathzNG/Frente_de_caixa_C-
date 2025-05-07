@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Runtime.InteropServices;
 
 
 
@@ -15,6 +16,13 @@ namespace Cadastro_de_produto
 {
     public partial class frmCaixa : Form
     {
+        const int MF_BYCOMMAND = 0X400;
+        [DllImport("user32")]
+        static extern int RemoveMenu(IntPtr hMenu, int nPosition, int wFlags);
+        [DllImport("user32")]
+        static extern IntPtr GetSystemMenu(IntPtr hWnd, bool bRevert);
+        [DllImport("user32")]
+        static extern int GetMenuItemCount(IntPtr hWnd);
         public frmCaixa()
         {
             InitializeComponent();
@@ -149,6 +157,11 @@ namespace Cadastro_de_produto
             dgvProduto.Columns.Add(lblPreco.Text, "Preço");
             dgvProduto.Columns.Add(lblQuantidade.Text, "Quantidade");
             dgvProduto.Columns.Add("Valor Total", "Valor Total");
+
+
+            IntPtr hMenu = GetSystemMenu(this.Handle, false);
+            int MenuCount = GetMenuItemCount(hMenu) - 1;
+            RemoveMenu(hMenu, MenuCount, MF_BYCOMMAND);
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)

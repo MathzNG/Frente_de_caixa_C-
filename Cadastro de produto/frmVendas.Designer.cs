@@ -171,6 +171,7 @@
             this.Name = "frmVendas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vendas";
+            this.Load += new System.EventHandler(this.frmVendas_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendas)).EndInit();
