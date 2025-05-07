@@ -13,6 +13,7 @@ namespace Cadastro_de_produto
 {
     public partial class frmProdutos : Form
     {
+        
         public frmProdutos()
         {
             InitializeComponent();
@@ -41,6 +42,7 @@ namespace Cadastro_de_produto
         private void frmProdutos_Load(object sender, EventArgs e)
         {
             dgvProdutos.DataSource = Produto.ListaProdutos;
+            carregarProdutos();
         }
 
         private void dgvProdutos_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
@@ -55,19 +57,30 @@ namespace Cadastro_de_produto
             }
         }
 
-        private void carregaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void smiMenu_Click(object sender, EventArgs e)
         {
-            carregarProdutos();
+            frmMenu abrir = new frmMenu();
+            abrir.Show();
+            this.Hide();
         }
 
-        private void limparToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tsmCadastro_Click(object sender, EventArgs e)
         {
-            limparInformacoes();
+            frmCadastro abrir = new frmCadastro();
+            abrir.Show();
+            this.Hide();
         }
 
-        private void voltarToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tsmCaixa_Click(object sender, EventArgs e)
         {
-            frmMenu abrir = new frmMenu();  
+            frmCaixa abrir = new frmCaixa();
+            abrir.Show();
+            this.Hide();
+        }
+
+        private void tsmVendas_Click(object sender, EventArgs e)
+        {
+            frmVendas abrir = new frmVendas();
             abrir.Show();
             this.Hide();
         }

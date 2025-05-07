@@ -220,6 +220,7 @@ namespace Cadastro_de_produto
                     "Messagem de Sucesso");
                 valorVenda();
                 LimparCampos();
+                dgvProduto.Rows.Clear();
             }
             else
             {

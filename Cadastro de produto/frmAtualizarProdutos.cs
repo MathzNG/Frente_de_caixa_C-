@@ -63,5 +63,14 @@ namespace Cadastro_de_produto
             }
             pesquisarPorNome(txtNome.Text);
         }
+
+        private void txtNome_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnPesquisar.Focus();
+                btnPesquisar_Click(sender, e);
+            }
+        }
     }
 }

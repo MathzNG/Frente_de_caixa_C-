@@ -23,6 +23,7 @@ namespace Cadastro_de_produto
         }
         public void desabilitarCampos()
         {
+            btnAdicionar.Enabled = true;
             btnAlterar.Enabled = false;
             btnExcluir.Enabled = false;
             txtNome.Focus();
@@ -207,6 +208,7 @@ namespace Cadastro_de_produto
                 txtNome.Clear();
                 nudPreco.Value = 0;
                 txtDescricao.Clear();
+                desabilitarCampos();
             }
             else
             {

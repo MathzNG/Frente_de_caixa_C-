@@ -206,6 +206,11 @@
             // 
             this.nudPreco.DecimalPlaces = 2;
             this.nudPreco.Location = new System.Drawing.Point(26, 173);
+            this.nudPreco.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
             this.nudPreco.Name = "nudPreco";
             this.nudPreco.Size = new System.Drawing.Size(157, 22);
             this.nudPreco.TabIndex = 2;
@@ -261,6 +266,7 @@
             this.MainMenuStrip = this.mspMenu;
             this.MaximizeBox = false;
             this.Name = "frmCadastro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Produtos";
             this.Load += new System.EventHandler(this.frmCadastro_Load);
             this.mspMenu.ResumeLayout(false);

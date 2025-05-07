@@ -145,6 +145,7 @@
             this.dgvVendas.Location = new System.Drawing.Point(0, 156);
             this.dgvVendas.Margin = new System.Windows.Forms.Padding(2);
             this.dgvVendas.Name = "dgvVendas";
+            this.dgvVendas.ReadOnly = true;
             this.dgvVendas.RowHeadersWidth = 51;
             this.dgvVendas.RowTemplate.Height = 24;
             this.dgvVendas.Size = new System.Drawing.Size(556, 152);
@@ -168,6 +169,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmVendas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vendas";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

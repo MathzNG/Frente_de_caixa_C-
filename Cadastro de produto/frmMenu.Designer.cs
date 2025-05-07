@@ -84,7 +84,7 @@
             this.btnProdutos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProdutos.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProdutos.Image = ((System.Drawing.Image)(resources.GetObject("btnProdutos.Image")));
-            this.btnProdutos.Location = new System.Drawing.Point(0, 264);
+            this.btnProdutos.Location = new System.Drawing.Point(-1, 201);
             this.btnProdutos.Name = "btnProdutos";
             this.btnProdutos.Size = new System.Drawing.Size(187, 48);
             this.btnProdutos.TabIndex = 3;
@@ -99,7 +99,7 @@
             this.btnCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastro.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastro.Image = ((System.Drawing.Image)(resources.GetObject("btnCadastro.Image")));
-            this.btnCadastro.Location = new System.Drawing.Point(0, 195);
+            this.btnCadastro.Location = new System.Drawing.Point(-1, 133);
             this.btnCadastro.Name = "btnCadastro";
             this.btnCadastro.Size = new System.Drawing.Size(187, 48);
             this.btnCadastro.TabIndex = 2;
@@ -114,7 +114,7 @@
             this.btnCaixa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCaixa.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCaixa.Image = ((System.Drawing.Image)(resources.GetObject("btnCaixa.Image")));
-            this.btnCaixa.Location = new System.Drawing.Point(0, 129);
+            this.btnCaixa.Location = new System.Drawing.Point(-1, 265);
             this.btnCaixa.Name = "btnCaixa";
             this.btnCaixa.Size = new System.Drawing.Size(187, 48);
             this.btnCaixa.TabIndex = 1;
@@ -128,11 +128,11 @@
             this.panelMenu.BackColor = System.Drawing.Color.LightPink;
             this.panelMenu.Controls.Add(this.btnVendas);
             this.panelMenu.Controls.Add(this.lblMenu);
+            this.panelMenu.Controls.Add(this.btnCaixa);
             this.panelMenu.Controls.Add(this.btnSair);
             this.panelMenu.Controls.Add(this.pctMenu);
             this.panelMenu.Controls.Add(this.btnProdutos);
             this.panelMenu.Controls.Add(this.btnCadastro);
-            this.panelMenu.Controls.Add(this.btnCaixa);
             this.panelMenu.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panelMenu.Location = new System.Drawing.Point(0, -2);
             this.panelMenu.Name = "panelMenu";
@@ -175,6 +175,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             ((System.ComponentModel.ISupportInitialize)(this.pctMenu)).EndInit();
             this.panelMenu.ResumeLayout(false);

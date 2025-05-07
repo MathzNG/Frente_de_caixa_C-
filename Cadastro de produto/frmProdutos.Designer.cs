@@ -31,20 +31,24 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProdutos));
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.carregaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.limparToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.voltarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.smiMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmCadastro = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmCaixa = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmVendas = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvProdutos
             // 
+            this.dgvProdutos.AllowUserToAddRows = false;
+            this.dgvProdutos.AllowUserToDeleteRows = false;
             this.dgvProdutos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProdutos.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvProdutos.Location = new System.Drawing.Point(0, 26);
             this.dgvProdutos.Name = "dgvProdutos";
+            this.dgvProdutos.ReadOnly = true;
             this.dgvProdutos.RowHeadersWidth = 51;
             this.dgvProdutos.Size = new System.Drawing.Size(700, 376);
             this.dgvProdutos.TabIndex = 0;
@@ -55,9 +59,10 @@
             this.menuStrip1.BackColor = System.Drawing.Color.LightPink;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.carregaToolStripMenuItem,
-            this.limparToolStripMenuItem,
-            this.voltarToolStripMenuItem});
+            this.smiMenu,
+            this.tsmCadastro,
+            this.tsmCaixa,
+            this.tsmVendas});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -65,26 +70,33 @@
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // carregaToolStripMenuItem
+            // smiMenu
             // 
-            this.carregaToolStripMenuItem.Name = "carregaToolStripMenuItem";
-            this.carregaToolStripMenuItem.Size = new System.Drawing.Size(115, 20);
-            this.carregaToolStripMenuItem.Text = "Carregar Produtos";
-            this.carregaToolStripMenuItem.Click += new System.EventHandler(this.carregaToolStripMenuItem_Click);
+            this.smiMenu.Name = "smiMenu";
+            this.smiMenu.Size = new System.Drawing.Size(50, 20);
+            this.smiMenu.Text = "Menu";
+            this.smiMenu.Click += new System.EventHandler(this.smiMenu_Click);
             // 
-            // limparToolStripMenuItem
+            // tsmCadastro
             // 
-            this.limparToolStripMenuItem.Name = "limparToolStripMenuItem";
-            this.limparToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
-            this.limparToolStripMenuItem.Text = "Limpar";
-            this.limparToolStripMenuItem.Click += new System.EventHandler(this.limparToolStripMenuItem_Click);
+            this.tsmCadastro.Name = "tsmCadastro";
+            this.tsmCadastro.Size = new System.Drawing.Size(79, 20);
+            this.tsmCadastro.Text = "Cadastrado";
+            this.tsmCadastro.Click += new System.EventHandler(this.tsmCadastro_Click);
             // 
-            // voltarToolStripMenuItem
+            // tsmCaixa
             // 
-            this.voltarToolStripMenuItem.Name = "voltarToolStripMenuItem";
-            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
-            this.voltarToolStripMenuItem.Text = "Voltar";
-            this.voltarToolStripMenuItem.Click += new System.EventHandler(this.voltarToolStripMenuItem_Click);
+            this.tsmCaixa.Name = "tsmCaixa";
+            this.tsmCaixa.Size = new System.Drawing.Size(48, 20);
+            this.tsmCaixa.Text = "Caixa";
+            this.tsmCaixa.Click += new System.EventHandler(this.tsmCaixa_Click);
+            // 
+            // tsmVendas
+            // 
+            this.tsmVendas.Name = "tsmVendas";
+            this.tsmVendas.Size = new System.Drawing.Size(56, 20);
+            this.tsmVendas.Text = "Vendas";
+            this.tsmVendas.Click += new System.EventHandler(this.tsmVendas_Click);
             // 
             // frmProdutos
             // 
@@ -97,6 +109,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "frmProdutos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Produtos";
             this.Load += new System.EventHandler(this.frmProdutos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).EndInit();
@@ -111,8 +124,9 @@
 
         private System.Windows.Forms.DataGridView dgvProdutos;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem carregaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem limparToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem voltarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem smiMenu;
+        private System.Windows.Forms.ToolStripMenuItem tsmCadastro;
+        private System.Windows.Forms.ToolStripMenuItem tsmCaixa;
+        private System.Windows.Forms.ToolStripMenuItem tsmVendas;
     }
 }

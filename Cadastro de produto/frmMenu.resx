@@ -144,7 +144,7 @@
   <data name="btnProdutos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAACNZJREFUWEfNV2lUVdcVZgYZBUWBEBUFsSKKDMo8v8c88wARRUGUOmTAKqCoWKcS
+        vQAADr0BR/uQrQAACNZJREFUWEfNV2lUVdcVZgYZBUWBEBUFsSKKDMo8v8c88wARRUGUOmTAKqCoWKcS
         o0HBKEtFwICgDOpSHMAJQ4NJY43Nj6ZZravtSho1bZpGWk3SfN378N4L76373uqQuvjxrX3evvd+9zv7
         nHv29wxgYDCmIZkcS5BMjiVIJnVh1FAN1UAZ/i1IJnVAMqkLHHoqC9BUpkDjqwq0lefjwVtVuNfwE7Ss
         z0NP1RKBlvU5OLk+V8TuTQU4t6UQJ1Yn4vSP5YJKm1cfJJO6wAFntuOLlkqg66f455lq/OHNV/DHI2V4
@@ -206,7 +206,7 @@
   <data name="btnCaixa.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAA09JREFUWEfNmD1y00AUx/dDki0nAUMDDTBQUVJQZSaGE9AxtkOKNBTcguEGOVBO
+        vQAADr0BR/uQrQAAA09JREFUWEfNmD1y00AUx/dDki0nAUMDDTBQUVJQZSaGE9AxtkOKNBTcguEGOVBO
         wAHSJEfIeCZJneX913nr1e7zh0yisWd+Xr2/3pd3pZUS5ZTaaURxlxDFXUIUH4PocCmHh4dOPBEhiquo
         6zok7ff7SwtUWrnvf2crgWsalyKKEnxojHFojO2Y2LC6EJuKSWMkRFGiLEt3c3PjZrOZ5/b2Nhzf3d15
         t9i/8waLoggNScAt9i+VFZuKSWMkRFGibYO4FCLTaa09sY0xCEsQRYm2DaZgkPR1iKLE/zbY6/Uev0G/
@@ -226,7 +226,7 @@
   <data name="btnVendas.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAK
-        7QAACu0BAohJwQAAB2NJREFUWEe9V2tQVVUUvhMIPhAx08xHGlFqRV4CQdNyppmmprFGmh7Ya5qxGGuo
+        7AAACuwB0M+rJQAAB2NJREFUWEe9V2tQVVUUvhMIPhAx08xHGlFqRV4CQdNyppmmprFGmh7Ya5qxGGuo
         6TH2UtPGsdJKG2eiYkqdhFBQJDRDQAQkHsLFANPMIR/kIGkG5iMe93yttc7dl3PP3YATxo/vrL2/vfZe
         39l77b3PccDh0MJShJXvb/gTnmLslFC8+sz1SLh/lLfZW+hH+FbI7F80FdtSpgAnZ6H8Gyday2JxpiYW
         M2eOEDerf3/At0KmeW8MiZuOjE+mCD0yLAgVWU4Y+2OkbvXvD/hWyLTVTkPDDidVA5GUcD3eXTARtRlT
