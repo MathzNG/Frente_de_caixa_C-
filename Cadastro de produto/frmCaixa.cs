@@ -45,13 +45,20 @@ namespace Cadastro_de_produto
             comm.Connection = Conexao.obterConexao();
             comm.CommandText = "select nome,codProd from tbProdutos;";
             comm.CommandType = CommandType.Text;
-
-            MySqlDataReader dr = comm.ExecuteReader();
-            while (dr.Read())
+            try
             {
-                ltbProdutos.Items.Add(dr["nome"].ToString());
+                MySqlDataReader dr = comm.ExecuteReader();
+                while (dr.Read())
+                {
+                    ltbProdutos.Items.Add(dr["nome"].ToString());
+                }
+                Conexao.fecharConexao();
+            } 
+            catch (Exception)
+            {
+                MessageBox.Show("Ligar o banco de dados!",
+                    "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            Conexao.fecharConexao();
         }
 
         public int valorVenda()

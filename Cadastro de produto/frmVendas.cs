@@ -63,16 +63,25 @@ namespace Cadastro_de_produto
             comm.Parameters.Clear();
             DateTime dataFormatada = DateTime.ParseExact(mskData.Text, "dd/MM/yyyy", null);
             comm.Parameters.Add("@dataVenda", MySqlDbType.Date).Value = dataFormatada;
-           
-            MySqlDataAdapter da = new MySqlDataAdapter(comm);
+            try
+            {
+                MySqlDataAdapter da = new MySqlDataAdapter(comm);
 
-            DataTable dataTable = new DataTable();
+                DataTable dataTable = new DataTable();
 
-            da.Fill(dataTable);
+                da.Fill(dataTable);
 
-            dgvVendas.DataSource = dataTable;
+                dgvVendas.DataSource = dataTable;
 
-            Conexao.fecharConexao();
+                Conexao.fecharConexao();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Liga o banco de dados",
+                    "Erro",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
 
         public void limparCampos()

@@ -62,13 +62,24 @@ namespace Cadastro_de_produto
             comm.Parameters.Add("@preco", MySqlDbType.Decimal, 18).Value = nudPreco.Text;
             comm.Parameters.Add("@descricao", MySqlDbType.VarChar, 100).Value = txtDescricao.Text;
 
-            comm.Connection = Conexao.obterConexao();
+            try
+            {
+                comm.Connection = Conexao.obterConexao();
 
-            int resp = comm.ExecuteNonQuery();
+                int resp = comm.ExecuteNonQuery();
 
-            Conexao.fecharConexao();
+                Conexao.fecharConexao();
 
-            return resp;
+                return resp;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ligar o banco de dados", 
+                    "Error", 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Error);
+                return -1;
+            }
 
         }
 

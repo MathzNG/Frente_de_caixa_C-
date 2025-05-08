@@ -32,12 +32,20 @@ namespace Cadastro_de_produto
             comm.Connection = Conexao.obterConexao();
             comm.CommandText = "select codProd as Codigo, nome as Produto, preco as Preco, descricao as Descricao from tbProdutos;";
             comm.CommandType = CommandType.Text;
+            try
+            {
+                MySqlDataReader da = comm.ExecuteReader();
+                DataTable dataTable = new DataTable();
+                dataTable.Load(da);
 
-            MySqlDataReader da = comm.ExecuteReader();
-            DataTable dataTable = new DataTable();
-            dataTable.Load(da);
-
-            dgvProdutos.DataSource = dataTable;
+                dgvProdutos.DataSource = dataTable;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ligar o banco de dados!",
+                    "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
         }
 
         public void limparInformacoes()
