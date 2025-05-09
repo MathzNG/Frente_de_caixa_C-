@@ -71,9 +71,21 @@ namespace Cadastro_de_produto
 
                 da.Fill(dataTable);
 
-                dgvVendas.DataSource = dataTable;
+                if (dataTable.Rows.Count > 0)
+                {
+                    dgvVendas.DataSource = dataTable;
+                }
+                else
+                {
+                    MessageBox.Show("Nenhuma venda encontrada para a data informada.",
+                        "Aviso",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    limparCampos();
+                }
 
                 Conexao.fecharConexao();
+
             }
             catch (Exception)
             {
