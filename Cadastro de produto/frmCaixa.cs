@@ -53,7 +53,7 @@ namespace Cadastro_de_produto
                     ltbProdutos.Items.Add(dr["nome"].ToString());
                 }
                 Conexao.fecharConexao();
-            } 
+            }
             catch (Exception)
             {
                 MessageBox.Show("Ligar o banco de dados!",
@@ -64,7 +64,7 @@ namespace Cadastro_de_produto
         public int valorVenda()
         {
             int valor = 0;
-            
+
             foreach (DataGridViewRow row in dgvProduto.Rows)
             {
                 if (row.IsNewRow) continue;
@@ -80,7 +80,7 @@ namespace Cadastro_de_produto
                 comm.Parameters.Clear();
                 comm.Parameters.Add("@codProd", MySqlDbType.Int32).Value = id;
                 comm.Parameters.Add("@quantidade", MySqlDbType.Int32).Value = quantidade;
-                comm.Parameters.Add("@valor", MySqlDbType.Decimal,18).Value = preco;
+                comm.Parameters.Add("@valor", MySqlDbType.Decimal, 18).Value = preco;
                 comm.Parameters.Add("@dataVenda", MySqlDbType.Date).Value = DateTime.Now;
 
                 comm.Connection = Conexao.obterConexao();
@@ -89,7 +89,7 @@ namespace Cadastro_de_produto
 
                 Conexao.fecharConexao();
 
-               
+
             }
             return valor;
         }
@@ -251,11 +251,51 @@ namespace Cadastro_de_produto
 
         private void nudQuantidade_ValueChanged(object sender, EventArgs e)
         {
-            double preco = Convert.ToDouble(lblInvisiblepreco.Text);
-            int quantidade = Convert.ToInt32(nudQuantidade.Value);
-            double total = preco * quantidade;
+            try
+            {
+                double preco = Convert.ToDouble(lblInvisiblepreco.Text);
+                int quantidade = Convert.ToInt32(nudQuantidade.Value);
+                double total = preco * quantidade;
+                lblInvisibleTotal.Text = total.ToString("F2");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Selecione um produto da lista.",
+                    "Messagem do Sistema",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error,
+                    MessageBoxDefaultButton.Button1);
+                return;
+            }
+            
 
-            lblInvisibleTotal.Text = total.ToString("F2");
+            ;
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            if (dgvProduto.Rows.Count > 0)
+            {
+                DialogResult resul = MessageBox.Show("Deseja cancelar a venda?",
+                "Confirmação",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2);
+
+                if (resul == DialogResult.Yes)
+                {
+                    LimparCampos();
+                    dgvProduto.Rows.Clear();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Não há produtos na lista para cancelar.",
+                    "Messagem do Sistema",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error,
+                    MessageBoxDefaultButton.Button1);
+            }
         }
     }
 }

@@ -45,6 +45,7 @@
             this.btnFinalizar = new System.Windows.Forms.Button();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.pctFundo = new System.Windows.Forms.PictureBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantidade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctFundo)).BeginInit();
@@ -147,7 +148,7 @@
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(187, 52);
             this.btnVoltar.TabIndex = 9;
-            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.Text = "&Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
@@ -157,11 +158,11 @@
             this.btnAdicionar.FlatAppearance.BorderSize = 0;
             this.btnAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdicionar.Font = new System.Drawing.Font("Arial Narrow", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdicionar.Location = new System.Drawing.Point(1366, 805);
+            this.btnAdicionar.Location = new System.Drawing.Point(1366, 794);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(187, 52);
             this.btnAdicionar.TabIndex = 7;
-            this.btnAdicionar.Text = "Adicionar";
+            this.btnAdicionar.Text = "&Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
             this.btnAdicionar.Click += new System.EventHandler(this.btnConfirma_Click_1);
             this.btnAdicionar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnConfirma_KeyDown);
@@ -224,11 +225,11 @@
             this.btnFinalizar.FlatAppearance.BorderSize = 0;
             this.btnFinalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFinalizar.Font = new System.Drawing.Font("Arial Narrow", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinalizar.Location = new System.Drawing.Point(1366, 889);
+            this.btnFinalizar.Location = new System.Drawing.Point(1366, 852);
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.Size = new System.Drawing.Size(187, 52);
             this.btnFinalizar.TabIndex = 8;
-            this.btnFinalizar.Text = "Finalizar";
+            this.btnFinalizar.Text = "&Finalizar";
             this.btnFinalizar.UseVisualStyleBackColor = true;
             this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
@@ -254,11 +255,26 @@
             this.pctFundo.TabIndex = 0;
             this.pctFundo.TabStop = false;
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Arial Narrow", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(1366, 912);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(187, 52);
+            this.btnCancelar.TabIndex = 18;
+            this.btnCancelar.Text = "&Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // frmCaixa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1660, 1037);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.dgvProduto);
@@ -308,5 +324,6 @@
         private System.Windows.Forms.Button btnFinalizar;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.PictureBox pctFundo;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

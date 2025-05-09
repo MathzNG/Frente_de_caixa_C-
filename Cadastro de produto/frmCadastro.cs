@@ -23,7 +23,7 @@ namespace Cadastro_de_produto
         static extern IntPtr GetSystemMenu(IntPtr hWnd, bool bRevert);
         [DllImport("user32")]
         static extern int GetMenuItemCount(IntPtr hWnd);
-        private RepositorioProduto repositorio = new RepositorioProduto();
+        
         public frmCadastro()
         {
             InitializeComponent();
@@ -270,6 +270,7 @@ namespace Cadastro_de_produto
             frmAtualizarProdutos abrir = new frmAtualizarProdutos();
             abrir.ShowDialog();
             this.Hide();
+            
         }
 
         private void mspVendas_Click(object sender, EventArgs e)

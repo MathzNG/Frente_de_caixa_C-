@@ -56,7 +56,7 @@ namespace Cadastro_de_produto
 
         private void frmProdutos_Load(object sender, EventArgs e)
         {
-            dgvProdutos.DataSource = Produto.ListaProdutos;
+            
             carregarProdutos();
             IntPtr hMenu = GetSystemMenu(this.Handle, false);
             int MenuCount = GetMenuItemCount(hMenu) - 1;
