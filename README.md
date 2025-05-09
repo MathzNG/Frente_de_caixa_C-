@@ -44,21 +44,33 @@ https://www.apachefriends.org/pt_br/index.html
 1.	Clonar o Repositório
 
 •	Escolhe uma pasta para colocar o programa (recomendo criar uma para isso)
+
 •	Dentro da pasta, click com o botão direito do mouse
+
 •	Abra o “Open Git Bash here”
+
 •	Insere esse comando.
+
 •	git clone https://github.com/MathzNG/Frente_de_caixa_C-.git
+
 •	Depois de clonar, ligar o banco de dados
+
 •	Abra o xampp.
+
 •	Aperte os dois primeiros Start. (Apache e MySQL)
 
 2.	Instalar o programa
 
 •	Abra a pasta do projeto
+
 •	Vai até a pasta Cadastro de produto e abre
+
 •	Agora localiza a pasta “publish”
+
 •	Abra ela e click no “Cadastro de produto”
+
 •	Depois instalar o programa
+
 •	E pronto, aproveite o seu sistema.
 
 
