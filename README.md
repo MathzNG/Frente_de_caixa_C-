@@ -29,3 +29,36 @@ Interface dedicada à inclusão, edição e visualização de produtos disponív
 
 Exibe um resumo das vendas realizadas, com possibilidade de filtrar por data ou intervalo de tempo.
 
+--Como utilizar o projeto--
+
+•	Baixar o Git – para clonar o projeto
+
+https://git-scm.com/downloads
+ 
+•	Baixar Xampp  - para o banco de dados
+
+https://www.apachefriends.org/pt_br/index.html
+
+-Como Instalar-
+
+1.	Clonar o Repositório
+
+•	Escolhe uma pasta para colocar o programa (recomendo criar uma para isso)
+•	Dentro da pasta, click com o botão direito do mouse
+•	Abra o “Open Git Bash here”
+•	Insere esse comando.
+•	git clone https://github.com/MathzNG/Frente_de_caixa_C-.git
+•	Depois de clonar, ligar o banco de dados
+•	Abra o xampp.
+•	Aperte os dois primeiros Start. (Apache e MySQL)
+
+2.	Instalar o programa
+
+•	Abra a pasta do projeto
+•	Vai até a pasta Cadastro de produto e abre
+•	Agora localiza a pasta “publish”
+•	Abra ela e click no “Cadastro de produto”
+•	Depois instalar o programa
+•	E pronto, aproveite o seu sistema.
+
+
