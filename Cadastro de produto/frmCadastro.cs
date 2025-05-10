@@ -112,7 +112,7 @@ namespace Cadastro_de_produto
             nudPreco.Value = 0;
             txtId.Clear();
             txtDescricao.Clear();
-
+            txtNome.Focus();
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
@@ -223,6 +223,13 @@ namespace Cadastro_de_produto
         {
             //Atualizar valor ou nome do produto
 
+            if (txtNome.Text == "" || nudPreco.Value == 0)
+            {
+                MessageBox.Show("Preencha todos os campos para alterar!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                LimparCampos();
+                return;
+            }
+
             if (alterarDados(Convert.ToInt32(txtId.Text)) == 1)
             {
                 MessageBox.Show("Produto atualizado com sucesso!");
@@ -263,12 +270,13 @@ namespace Cadastro_de_produto
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             LimparCampos();
+            
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             frmAtualizarProdutos abrir = new frmAtualizarProdutos();
-            abrir.ShowDialog();
+            abrir.Show();
             this.Hide();
             
         }

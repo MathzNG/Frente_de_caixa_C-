@@ -38,6 +38,11 @@ namespace Cadastro_de_produto
             nudQuantidade.Value = 0;
             nudQuantidade.ValueChanged += nudQuantidade_ValueChanged;
         }
+
+        public void limparData()
+        {
+            dgvProduto.Rows.Clear();
+        }
         public void produtosLista()
         {
 
@@ -153,6 +158,9 @@ namespace Cadastro_de_produto
             btnFinalizar.BackColor = Color.Transparent;
             btnFinalizar.Parent = pctFundo;
 
+            btnCancelar.BackColor = Color.Transparent;
+            btnCancelar.Parent = pctFundo;
+
         }
 
         private void frmCaixa_Load(object sender, EventArgs e)
@@ -240,11 +248,14 @@ namespace Cadastro_de_produto
                     "Messagem de Sucesso");
                 valorVenda();
                 LimparCampos();
-                dgvProduto.Rows.Clear();
+                limparData();
             }
             else
             {
-                MessageBox.Show("Erro");
+                MessageBox.Show("Venda não confirmada",
+                    "Mensagem do Sistema",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
 
             }
         }
@@ -267,9 +278,7 @@ namespace Cadastro_de_produto
                     MessageBoxDefaultButton.Button1);
                 return;
             }
-            
-
-            ;
+           
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -285,7 +294,7 @@ namespace Cadastro_de_produto
                 if (resul == DialogResult.Yes)
                 {
                     LimparCampos();
-                    dgvProduto.Rows.Clear();
+                    limparData();
                 }
             }
             else

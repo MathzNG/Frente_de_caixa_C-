@@ -35,21 +35,40 @@ namespace Cadastro_de_produto
         }
         public void pesquisarPorNome(string descricao)
         {
+
             MySqlCommand comm = new MySqlCommand();
-            comm.CommandText = "select nome from tbProdutos where nome like '%" + descricao + "%';";
+            comm.CommandText = "SELECT nome FROM tbProdutos WHERE nome LIKE @nome"; 
             comm.CommandType = CommandType.Text;
 
             comm.Parameters.Clear();
-            comm.Parameters.Add("@nome", MySqlDbType.VarChar, 100).Value = descricao;
+            comm.Parameters.Add("@nome", MySqlDbType.VarChar, 100).Value = "%" + descricao + "%";
 
-            comm.Connection = Conexao.obterConexao();
-
-            MySqlDataReader DR;
-            DR = comm.ExecuteReader();
-
-            while (DR.Read())
+            try
             {
-                ltbPesquisar.Items.Add((DR.GetString(0)));
+                comm.Connection = Conexao.obterConexao();
+
+                MySqlDataReader DR = comm.ExecuteReader();
+
+                while (DR.Read())
+                {
+                    ltbPesquisar.Items.Add((DR.GetString(0)));
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Erro ao pesquisar o produto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (ltbPesquisar.Items.Count == 0)
+                {
+                    MessageBox.Show("Produto não encontrado. Por favor digite outro produto",
+                        "Mensagem do Sistema",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    txtNome.Clear();
+                    txtNome.Focus();
+                }
             }
 
             Conexao.fecharConexao();
@@ -74,9 +93,11 @@ namespace Cadastro_de_produto
             }
         }
 
-        private void frmAtualizarProdutos_Load(object sender, EventArgs e)
+        private void frmAtualizarProdutos_FormClosed(object sender, FormClosedEventArgs e)
         {
-
+            frmCadastro abrir = new frmCadastro();
+            abrir.Show();
+            this.Hide();
         }
     }
 }
