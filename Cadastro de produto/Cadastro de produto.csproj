@@ -13,7 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\matheus.fsantos72\Downloads\Frente_de_caixa\Loja_de_doce\Loja_de_doce\Cadastro de produto\bin\Release\frente de caixa\</PublishUrl>
+    <PublishUrl>C:\Users\mathe\Documents\Visual Studio 2022\Projeto integrador\Frente_de_caixa_C-\Cadastro de produto\Properties\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -25,7 +25,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <TrustUrlParameters>true</TrustUrlParameters>
     <ApplicationRevision>4</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
