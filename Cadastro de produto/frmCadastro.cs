@@ -260,6 +260,7 @@ namespace Cadastro_de_produto
                 txtNome.Text = "";
                 nudPreco.Value = 0;
                 txtDescricao.Clear();
+                desabilitarCampos();
             }
             else
             {

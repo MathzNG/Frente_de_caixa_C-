@@ -171,5 +171,14 @@ namespace Cadastro_de_produto
             int MenuCount = GetMenuItemCount(hMenu) - 1;
             RemoveMenu(hMenu, MenuCount, MF_BYCOMMAND);
         }
+
+        private void mskData_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnPesquisa.Focus();
+                btnPesquisa_Click(sender, e);
+            }
+        }
     }
 }

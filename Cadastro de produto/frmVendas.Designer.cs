@@ -77,7 +77,7 @@
             // caixaToolStripMenuItem
             // 
             this.caixaToolStripMenuItem.Name = "caixaToolStripMenuItem";
-            this.caixaToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.caixaToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.caixaToolStripMenuItem.Text = "Caixa";
             this.caixaToolStripMenuItem.Click += new System.EventHandler(this.caixaToolStripMenuItem_Click);
             // 
@@ -106,6 +106,7 @@
             this.mskData.Size = new System.Drawing.Size(67, 20);
             this.mskData.TabIndex = 7;
             this.mskData.ValidatingType = typeof(System.DateTime);
+            this.mskData.KeyDown += new System.Windows.Forms.KeyEventHandler(this.mskData_KeyDown);
             // 
             // lblTotalVenda
             // 
