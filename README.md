@@ -65,7 +65,7 @@ https://www.apachefriends.org/pt_br/index.html
 
 •	Vai até a pasta Cadastro de produto e abre
 
-•	Agora localiza a pasta “publish”
+•	Agora localiza a pasta “Properties”
 
 •	Abra ela e click no “Cadastro de produto”
 
