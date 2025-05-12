@@ -12,14 +12,14 @@ descricao varchar(100),
 primary key (codProd)
 ); 
 
-create table tbVendas(
-codVend int not null auto_increment,
-dataVenda date,
-valor decimal(9,2),
-quantidade char(100),
-primary key (codVend),
-codProd int not null,
-foreign key (codProd) references tbProdutos(codProd)
+CREATE TABLE tbVendas (
+codVend INT NOT NULL AUTO_INCREMENT,
+dataVenda DATE,
+valor DECIMAL(9,2),
+quantidade CHAR(100),
+PRIMARY KEY (codVend),
+codProd INT, 
+CONSTRAINT fk_codProd FOREIGN KEY (codProd) REFERENCES tbProdutos(codProd) ON DELETE SET NULL
 );
 
 desc tbProdutos;
@@ -45,3 +45,4 @@ desc tbVendas;
 
 -- select p.nome, v.valor,v.quantidade from tbVendas as v inner join tbProdutos as p on v.codProd = p.codProd;
 
+select * from tbVendas;
