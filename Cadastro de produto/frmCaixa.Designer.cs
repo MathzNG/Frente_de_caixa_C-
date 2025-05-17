@@ -84,7 +84,7 @@
             this.lblValorTotal.AutoSize = true;
             this.lblValorTotal.Font = new System.Drawing.Font("Arial Narrow", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblValorTotal.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblValorTotal.Location = new System.Drawing.Point(162, 705);
+            this.lblValorTotal.Location = new System.Drawing.Point(301, 456);
             this.lblValorTotal.Name = "lblValorTotal";
             this.lblValorTotal.Size = new System.Drawing.Size(110, 43);
             this.lblValorTotal.TabIndex = 3;
@@ -97,9 +97,9 @@
             this.ltbProdutos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ltbProdutos.FormattingEnabled = true;
             this.ltbProdutos.ItemHeight = 25;
-            this.ltbProdutos.Location = new System.Drawing.Point(926, 9);
+            this.ltbProdutos.Location = new System.Drawing.Point(811, 9);
             this.ltbProdutos.Name = "ltbProdutos";
-            this.ltbProdutos.Size = new System.Drawing.Size(722, 604);
+            this.ltbProdutos.Size = new System.Drawing.Size(543, 379);
             this.ltbProdutos.TabIndex = 0;
             this.ltbProdutos.SelectedIndexChanged += new System.EventHandler(this.ltbProdutos_SelectedIndexChanged);
             // 
@@ -110,7 +110,7 @@
             this.lblInvisibleTotal.AutoSize = true;
             this.lblInvisibleTotal.Font = new System.Drawing.Font("Arial Narrow", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInvisibleTotal.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblInvisibleTotal.Location = new System.Drawing.Point(280, 705);
+            this.lblInvisibleTotal.Location = new System.Drawing.Point(430, 456);
             this.lblInvisibleTotal.Name = "lblInvisibleTotal";
             this.lblInvisibleTotal.Size = new System.Drawing.Size(0, 42);
             this.lblInvisibleTotal.TabIndex = 5;
@@ -144,7 +144,7 @@
             this.btnVoltar.FlatAppearance.BorderSize = 0;
             this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVoltar.Font = new System.Drawing.Font("Arial Narrow", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoltar.Location = new System.Drawing.Point(1366, 970);
+            this.btnVoltar.Location = new System.Drawing.Point(1072, 678);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(187, 52);
             this.btnVoltar.TabIndex = 9;
@@ -158,7 +158,7 @@
             this.btnAdicionar.FlatAppearance.BorderSize = 0;
             this.btnAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdicionar.Font = new System.Drawing.Font("Arial Narrow", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdicionar.Location = new System.Drawing.Point(1366, 794);
+            this.btnAdicionar.Location = new System.Drawing.Point(1072, 502);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(187, 52);
             this.btnAdicionar.TabIndex = 7;
@@ -213,10 +213,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvProduto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProduto.Location = new System.Drawing.Point(56, 794);
+            this.dgvProduto.Location = new System.Drawing.Point(56, 502);
             this.dgvProduto.Name = "dgvProduto";
             this.dgvProduto.ReadOnly = true;
-            this.dgvProduto.Size = new System.Drawing.Size(1240, 231);
+            this.dgvProduto.Size = new System.Drawing.Size(946, 231);
             this.dgvProduto.TabIndex = 6;
             // 
             // btnFinalizar
@@ -225,7 +225,7 @@
             this.btnFinalizar.FlatAppearance.BorderSize = 0;
             this.btnFinalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFinalizar.Font = new System.Drawing.Font("Arial Narrow", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinalizar.Location = new System.Drawing.Point(1366, 852);
+            this.btnFinalizar.Location = new System.Drawing.Point(1072, 560);
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.Size = new System.Drawing.Size(187, 52);
             this.btnFinalizar.TabIndex = 8;
@@ -250,7 +250,7 @@
             this.pctFundo.Image = ((System.Drawing.Image)(resources.GetObject("pctFundo.Image")));
             this.pctFundo.Location = new System.Drawing.Point(0, 0);
             this.pctFundo.Name = "pctFundo";
-            this.pctFundo.Size = new System.Drawing.Size(1660, 1037);
+            this.pctFundo.Size = new System.Drawing.Size(1366, 745);
             this.pctFundo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctFundo.TabIndex = 0;
             this.pctFundo.TabStop = false;
@@ -261,7 +261,7 @@
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Arial Narrow", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(1366, 912);
+            this.btnCancelar.Location = new System.Drawing.Point(1072, 620);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(187, 52);
             this.btnCancelar.TabIndex = 18;
@@ -273,7 +273,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1660, 1037);
+            this.ClientSize = new System.Drawing.Size(1366, 745);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.btnFinalizar);
