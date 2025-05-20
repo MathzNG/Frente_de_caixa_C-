@@ -227,6 +227,7 @@ namespace Cadastro_de_produto
             {
                 MessageBox.Show("Preencha todos os campos para alterar!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 LimparCampos();
+                desabilitarCampos();
                 return;
             }
 
@@ -292,6 +293,13 @@ namespace Cadastro_de_produto
         private void mspCaixa_Click(object sender, EventArgs e)
         {
             frmCaixa abrir = new frmCaixa();
+            abrir.Show();
+            this.Hide();
+        }
+
+        private void registroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRegistro abrir = new frmRegistro();
             abrir.Show();
             this.Hide();
         }

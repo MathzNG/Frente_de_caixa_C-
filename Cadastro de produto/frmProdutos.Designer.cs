@@ -35,6 +35,7 @@
             this.tsmCadastro = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmCaixa = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmVendas = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -46,11 +47,12 @@
             this.dgvProdutos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProdutos.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvProdutos.Location = new System.Drawing.Point(0, 26);
+            this.dgvProdutos.Location = new System.Drawing.Point(0, 32);
+            this.dgvProdutos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvProdutos.Name = "dgvProdutos";
             this.dgvProdutos.ReadOnly = true;
             this.dgvProdutos.RowHeadersWidth = 51;
-            this.dgvProdutos.Size = new System.Drawing.Size(700, 376);
+            this.dgvProdutos.Size = new System.Drawing.Size(933, 463);
             this.dgvProdutos.TabIndex = 0;
             this.dgvProdutos.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProdutos_CellMouseEnter);
             // 
@@ -62,11 +64,12 @@
             this.smiMenu,
             this.tsmCadastro,
             this.tsmCaixa,
-            this.tsmVendas});
+            this.tsmVendas,
+            this.registroToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(700, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(933, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -87,7 +90,7 @@
             // tsmCaixa
             // 
             this.tsmCaixa.Name = "tsmCaixa";
-            this.tsmCaixa.Size = new System.Drawing.Size(48, 20);
+            this.tsmCaixa.Size = new System.Drawing.Size(47, 20);
             this.tsmCaixa.Text = "Caixa";
             this.tsmCaixa.Click += new System.EventHandler(this.tsmCaixa_Click);
             // 
@@ -98,15 +101,23 @@
             this.tsmVendas.Text = "Vendas";
             this.tsmVendas.Click += new System.EventHandler(this.tsmVendas_Click);
             // 
+            // registroToolStripMenuItem
+            // 
+            this.registroToolStripMenuItem.Name = "registroToolStripMenuItem";
+            this.registroToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.registroToolStripMenuItem.Text = "Registro";
+            this.registroToolStripMenuItem.Click += new System.EventHandler(this.registroToolStripMenuItem_Click);
+            // 
             // frmProdutos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 402);
+            this.ClientSize = new System.Drawing.Size(933, 495);
             this.Controls.Add(this.dgvProdutos);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "frmProdutos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -128,5 +139,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmCadastro;
         private System.Windows.Forms.ToolStripMenuItem tsmCaixa;
         private System.Windows.Forms.ToolStripMenuItem tsmVendas;
+        private System.Windows.Forms.ToolStripMenuItem registroToolStripMenuItem;
     }
 }

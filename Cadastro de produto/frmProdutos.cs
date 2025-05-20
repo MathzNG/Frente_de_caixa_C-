@@ -102,5 +102,12 @@ namespace Cadastro_de_produto
             abrir.Show();
             this.Hide();
         }
+
+        private void registroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRegistro abrir = new frmRegistro();
+            abrir.Show();
+            this.Hide();
+        }
     }
 }

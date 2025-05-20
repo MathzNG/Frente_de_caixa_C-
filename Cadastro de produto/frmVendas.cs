@@ -27,28 +27,45 @@ namespace Cadastro_de_produto
 
         }
 
-        public void pesquisarPorData(string data)
+        public int registro()
         {
-            MySqlCommand comm = new MySqlCommand();
-            comm.CommandText = "SELECT p.nome, v.valor, v.quantidade " +
-                   "FROM tbVendas AS v " +
-                   "INNER JOIN tbProdutos AS p ON v.codProd = p.codProd; ";
-            comm.CommandType = CommandType.Text;
+            int valor = 0;
 
-            comm.Parameters.Clear();
-            comm.Parameters.Add("@dataVenda", MySqlDbType.Date).Value = data;
-
-            comm.Connection = Conexao.obterConexao();
-
-            MySqlDataReader DR;
-            DR = comm.ExecuteReader();
-
-            while (DR.Read())
+            foreach (DataGridViewRow row in dgvVendas.Rows)
             {
-                string produto = $"{DR["nome"]} - {DR["quantidade"]} - {DR["valor"]}";
+                if (row.IsNewRow) continue;
+
+                string data = mskData.Text;
+                int id = Convert.ToInt32(row.Cells["Código"].Value);
+                double preco = Convert.ToDouble(row.Cells["Preço"].Value);
+                string nome = Convert.ToString(row.Cells["Nome"].Value);
+                int quantidade = Convert.ToInt32(row.Cells["Quantidade"].Value);
+                double total = Convert.ToDouble(row.Cells["Valor Total"].Value);
+                double totalVenda = Convert.ToDouble(txtTotalVenda.Text.Replace("R$", "").Trim());
+
+
+                MySqlCommand comm = new MySqlCommand();
+                comm.CommandText = "insert into tbRegistro(data,codigo,preco,nome,quantidade,valorTotal,totalVenda) values(@data,@codigo,@preco,@nome,@quantidade,@valorTotal,@totalVenda);";
+                comm.CommandType = CommandType.Text;
+
+                comm.Parameters.Clear();
+                comm.Parameters.Add("@data", MySqlDbType.Date).Value = DateTime.ParseExact(data, "dd/MM/yyyy", null);
+                comm.Parameters.Add("@codigo",MySqlDbType.Int32).Value = id;
+                comm.Parameters.Add("@preco", MySqlDbType.Decimal).Value = preco;
+                comm.Parameters.Add("@nome", MySqlDbType.VarChar, 100).Value = nome;
+                comm.Parameters.Add("@quantidade", MySqlDbType.Int32).Value = quantidade;
+                comm.Parameters.Add("@valorTotal", MySqlDbType.Decimal).Value = total;
+                comm.Parameters.Add("@totalVenda", MySqlDbType.Decimal).Value = totalVenda;
+
+                comm.Connection = Conexao.obterConexao();
+
+                valor += comm.ExecuteNonQuery();
+
+                Conexao.fecharConexao();
+
 
             }
-            Conexao.fecharConexao();
+            return valor;
         }
 
         public void carregarProdutos()
@@ -162,6 +179,8 @@ namespace Cadastro_de_produto
                     }
                 }
                 txtTotalVenda.Text = "R$" + total.ToString("F2");
+
+                registro();
             }
         }
 
@@ -179,6 +198,13 @@ namespace Cadastro_de_produto
                 btnPesquisa.Focus();
                 btnPesquisa_Click(sender, e);
             }
+        }
+
+        private void registroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRegistro abrir = new frmRegistro();
+            abrir.Show();
+            this.Hide();
         }
     }
 }

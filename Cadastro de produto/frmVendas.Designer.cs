@@ -40,6 +40,7 @@
             this.txtTotalVenda = new System.Windows.Forms.TextBox();
             this.btnPesquisa = new System.Windows.Forms.Button();
             this.dgvVendas = new System.Windows.Forms.DataGridView();
+            this.registroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendas)).BeginInit();
             this.SuspendLayout();
@@ -52,7 +53,8 @@
             this.menuToolStripMenuItem,
             this.cadastroToolStripMenuItem,
             this.caixaToolStripMenuItem,
-            this.produtosToolStripMenuItem});
+            this.produtosToolStripMenuItem,
+            this.registroToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -112,7 +114,7 @@
             // 
             this.lblTotalVenda.AutoSize = true;
             this.lblTotalVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalVenda.Location = new System.Drawing.Point(389, 108);
+            this.lblTotalVenda.Location = new System.Drawing.Point(389, 104);
             this.lblTotalVenda.Name = "lblTotalVenda";
             this.lblTotalVenda.Size = new System.Drawing.Size(95, 20);
             this.lblTotalVenda.TabIndex = 10;
@@ -120,7 +122,7 @@
             // 
             // txtTotalVenda
             // 
-            this.txtTotalVenda.Location = new System.Drawing.Point(393, 131);
+            this.txtTotalVenda.Location = new System.Drawing.Point(393, 127);
             this.txtTotalVenda.Name = "txtTotalVenda";
             this.txtTotalVenda.Size = new System.Drawing.Size(151, 20);
             this.txtTotalVenda.TabIndex = 11;
@@ -151,6 +153,13 @@
             this.dgvVendas.RowTemplate.Height = 24;
             this.dgvVendas.Size = new System.Drawing.Size(556, 152);
             this.dgvVendas.TabIndex = 13;
+            // 
+            // registroToolStripMenuItem
+            // 
+            this.registroToolStripMenuItem.Name = "registroToolStripMenuItem";
+            this.registroToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.registroToolStripMenuItem.Text = "Registro";
+            this.registroToolStripMenuItem.Click += new System.EventHandler(this.registroToolStripMenuItem_Click);
             // 
             // frmVendas
             // 
@@ -193,5 +202,6 @@
         private System.Windows.Forms.TextBox txtTotalVenda;
         private System.Windows.Forms.Button btnPesquisa;
         private System.Windows.Forms.DataGridView dgvVendas;
+        private System.Windows.Forms.ToolStripMenuItem registroToolStripMenuItem;
     }
 }
