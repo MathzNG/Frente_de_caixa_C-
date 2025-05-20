@@ -63,9 +63,7 @@ https://www.apachefriends.org/pt_br/index.html
 
 •	Abra a pasta do projeto
 
-•	Vai até a pasta Cadastro de produto e abre
-
-•	Agora localiza a pasta “Properties”
+•	Vai até a pasta Download
 
 •	Abra ela e click no “Cadastro de produto”
 
