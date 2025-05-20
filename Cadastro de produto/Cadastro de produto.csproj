@@ -13,7 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\matheus.fsantos72\Downloads\Frente_de_caixa\Loja_de_doce\Loja_de_doce\Cadastro de produto\bin\Release\frente de caixa\</PublishUrl>
+    <PublishUrl>C:\Users\matheus.fsantos72\Documentos\Frente_de_caixa\Loja_de_doce\Loja_de_doce\Cadastro de produto\bin\Release\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
